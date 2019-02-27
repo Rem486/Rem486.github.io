@@ -7,7 +7,7 @@
     <meta name="description" content="Rem486的博客">
     <link rel="icon" href="/img/logo.ico">
     
-    <link rel="preload" href="/assets/css/0.styles.bdd5c60e.css" as="style"><link rel="preload" href="/assets/js/app.ab233b45.js" as="script"><link rel="preload" href="/assets/js/8.a7a7d275.js" as="script"><link rel="prefetch" href="/assets/js/10.f634e57c.js"><link rel="prefetch" href="/assets/js/11.eea5f73c.js"><link rel="prefetch" href="/assets/js/2.717bcb4c.js"><link rel="prefetch" href="/assets/js/3.645c8779.js"><link rel="prefetch" href="/assets/js/4.fd6acb96.js"><link rel="prefetch" href="/assets/js/5.6787da90.js"><link rel="prefetch" href="/assets/js/6.10183cd3.js"><link rel="prefetch" href="/assets/js/7.04a898ec.js"><link rel="prefetch" href="/assets/js/9.a06584b9.js">
+    <link rel="preload" href="/assets/css/0.styles.bdd5c60e.css" as="style"><link rel="preload" href="/assets/js/app.59c85e6d.js" as="script"><link rel="preload" href="/assets/js/8.54415645.js" as="script"><link rel="prefetch" href="/assets/js/10.f634e57c.js"><link rel="prefetch" href="/assets/js/11.eea5f73c.js"><link rel="prefetch" href="/assets/js/2.717bcb4c.js"><link rel="prefetch" href="/assets/js/3.645c8779.js"><link rel="prefetch" href="/assets/js/4.fd6acb96.js"><link rel="prefetch" href="/assets/js/5.6787da90.js"><link rel="prefetch" href="/assets/js/6.10183cd3.js"><link rel="prefetch" href="/assets/js/7.04a898ec.js"><link rel="prefetch" href="/assets/js/9.a06584b9.js">
     <link rel="stylesheet" href="/assets/css/0.styles.bdd5c60e.css">
   </head>
   <body>
@@ -43,10 +43,108 @@ Animal.prototype.say = function () {
 var animal = new Animal('dog', 2)
 animal.say() // dog say something
 </code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="继承"><a href="#继承" aria-hidden="true" class="header-anchor">#</a> <a name="继承">继承</a></h4> <p>继承性（Inheritance）是指，在某种情况下，一个类会有“子类”。子类会继承父类的属性方法这些成员。例子：新创建一个 Dog 继承 Animal，Dog 类就会继承 Animal 类的属性：type，age，和方法：say，walk。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// ES6
+class Dog extend Animal{
+    constructor(type, age, color){
+        super(type, age)
+        this.color = color    
+    }
+    
+    say(){
+        super.say() // 调用父类的方法
+        console.log(`${this.color} ${this.type} say something`) // 定义 Dog 的相关操作
+    }
+    
+    walk(){
+        console.log(`${this.color} ${this.type} walking`) // 定义 Dog 的新方法
+    }
+}
+console.log(Animal.isPrototypeOf(Dog)) // true
 
+let tugou = new Dog('tugou', 2, 'yellow')
+console.log(Dog.prototype.isPrototypeOf(tugou)) // true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>// ES5
+function Dog (type, age, color){
+    // 继承属性
+    Animal.call(this, type, age)
+    this.color = color
+}
+// 继承方法
+Dog.prototype = new Animal()
+// 修改构造函数的指向
+Dog.prototype.constructor = Animal
+// 重写 Dog 的 say 方法
+Dog.prototype.say = function(){
+    console.log(`${this.color} ${this.type} say something`) // 定义 Dog 的相关操作
+}
+// 添加 Dog 的 walk 方法
+Dog.prototype.walk = function(){
+    console.log(`${this.color} ${this.type} walking`) // 定义 Dog 的新方法
+}
 
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>// ES5
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="多态"><a href="#多态" aria-hidden="true" class="header-anchor">#</a> <a name="多态">多态</a></h4> <h3 id="参考"><a href="#参考" aria-hidden="true" class="header-anchor">#</a> 参考</h3> <ul><li><a href="https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener noreferrer">维基百科 - 面向对象程序设计<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="noopener noreferrer">ECMAScript 6 入门 - Class 的基本语法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/chiangchou/p/js-oop1.html" target="_blank" rel="noopener noreferrer">JavaScript 面向对象(一) —— 基础篇<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2/22/2019, 8:37:04 PM</span></div></div> <!----> </div> <!----></div></div>
-    <script src="/assets/js/app.ab233b45.js" defer></script><script src="/assets/js/8.a7a7d275.js" defer></script>
+var tugou = new Dog('tugou', 2, 'yellow')
+tugou.say() // yellow tugou say something
+tugou.walk() // yellow tugou walking
+Dog.say() // Uncaught TypeError: Dog.say is not a function
+Dog.prototype.say() // undefined undefined say something
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h4 id="多态"><a href="#多态" aria-hidden="true" class="header-anchor">#</a> <a name="多态">多态</a></h4> <p>多态（Polymorphism）是指由继承而产生的相关的不同的类，其对象对同一消息会做出不同的响应。例如，Dog 和 Cat 都继承自 Animal ，都有 say 方法，但是可以进行重写使 say 方法有不同的操作。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Dog extends Animal{
+    constructor(type, age, color){
+        super(type, age)
+        this.color = color    
+    }
+    
+    say(){
+        console.log(`${this.color} ${this.type} wang! wang! wang!`) // 定义 Dog 的相关操作
+    }
+}
+
+class Cat extends Animal{
+    constructor(type, age, color){
+        super(type, age)
+        this.color = color    
+    }
+    
+    say(){
+        console.log(`${this.color} ${this.type} miao~ miao~ miao~`) // 定义 Cat 的相关操作
+    }
+}
+
+let tugou = new Dog('tugou', 2, 'yellow')
+let lanmao = new Cat('lanmao', 2, 'gray')
+tugou.say() // yellow tugou wang! wang! wang!
+lanmao.say() // gray lanmao miao~ miao~ miao~
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>function Dog (type, age, color){
+    // 继承属性
+    Animal.call(this, type, age)
+    this.color = color
+}
+// 继承方法
+Dog.prototype = new Animal()
+// 修改构造函数的指向
+Dog.prototype.constructor = Animal
+// 重写 Dog 的 say 方法
+Dog.prototype.say = function(){
+    console.log(`${this.color} ${this.type} wang! wang! wang!`) // 定义 Dog 的相关操作
+}
+
+function Cat (type, age, color){
+    // 继承属性
+    Animal.call(this, type, age)
+    this.color = color
+}
+// 继承方法
+Cat.prototype = new Animal()
+// 修改构造函数的指向
+Cat.prototype.constructor = Animal
+// 重写 Cat 的 say 方法
+Cat.prototype.say = function(){
+    console.log(`${this.color} ${this.type} miao~ miao~ miao~`) // 定义 Cat 的相关操作
+}
+
+var tugou = new Dog('tugou', 2, 'yellow')
+var lanmao = new Cat('lanmao', 2, 'gray')
+tugou.say() // yellow tugou wang! wang! wang!
+lanmao.say() // gray lanmao miao~ miao~ miao~
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p>至此，就算整理了一遍js创建对象的ES5/ES6的实现方法。对封装，继承，多态，又理解了一遍。</p> <h3 id="参考"><a href="#参考" aria-hidden="true" class="header-anchor">#</a> 参考</h3> <ul><li><a href="https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener noreferrer">维基百科 - 面向对象程序设计<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="noopener noreferrer">ECMAScript 6 入门 - Class 的基本语法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.cnblogs.com/chiangchou/p/js-oop1.html" target="_blank" rel="noopener noreferrer">JavaScript 面向对象(一) —— 基础篇<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li>js高级程序设计（六）面向对象</li></ul></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2/27/2019, 11:35:26 AM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.59c85e6d.js" defer></script><script src="/assets/js/8.54415645.js" defer></script>
   </body>
 </html>
