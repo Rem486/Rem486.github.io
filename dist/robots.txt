@@ -1,0 +1,4 @@
+# Hello spider. This just 'robots.txt'
+User-agent: *
+Disallow: /rem486
+Allow: /web
