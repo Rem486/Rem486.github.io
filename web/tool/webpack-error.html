@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>webpack-常见错误 | 从零开始的Rem486</title>
+  <meta name="description" content="webpack常见错误整理：invalid host header，不能使用ip访问">
+  <meta name="keywords" content="前端博客,前端知识,前端备忘录,程序员笔记,css,html,javascript,git,linux">
+  <meta name="baidu-site-verification" content="utzmmiwMvm"/>
+  <link rel="icon" href="/img/logo.ico">
+  <meta property="article:published_time" content="2019-09-25T00:00:00.000Z"><meta property="article:modified_time" content="2020-04-24T09:25:23.000Z"><meta property="og:site_name" content="从零开始的Rem486"><meta property="og:title" content="webpack-常见错误"><meta property="og:description" content="webpack常见错误整理：invalid host header，不能使用ip访问"><meta property="og:type" content="website"><meta property="og:url" content="/web/tool/webpack-error.html"><meta name="twitter:title" content="webpack-常见错误"><meta name="twitter:description" content="webpack常见错误整理：invalid host header，不能使用ip访问"><meta name="twitter:url" content="/web/tool/webpack-error.html"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:label2" content="Filed under"><meta name="twitter:data2" content="webpack, 工程化"><meta property="article:tag" content="webpack"><meta property="article:tag" content="工程化">
+  <link rel="preload" href="/assets/css/0.styles.ef41ae34.css" as="style"><link rel="preload" href="/assets/js/app.cef324cc.js" as="script"><link rel="preload" href="/assets/js/2.3904a8d8.js" as="script"><link rel="preload" href="/assets/js/56.3d91ace4.js" as="script"><link rel="prefetch" href="/assets/js/10.c05f2390.js"><link rel="prefetch" href="/assets/js/11.1ffce46e.js"><link rel="prefetch" href="/assets/js/12.4c88cafb.js"><link rel="prefetch" href="/assets/js/13.4f10f17f.js"><link rel="prefetch" href="/assets/js/14.a571d847.js"><link rel="prefetch" href="/assets/js/15.55a75f89.js"><link rel="prefetch" href="/assets/js/16.14551fca.js"><link rel="prefetch" href="/assets/js/17.45e7eb3f.js"><link rel="prefetch" href="/assets/js/18.47098e43.js"><link rel="prefetch" href="/assets/js/19.5d57f01b.js"><link rel="prefetch" href="/assets/js/20.482ed238.js"><link rel="prefetch" href="/assets/js/21.1b70b6e5.js"><link rel="prefetch" href="/assets/js/22.f9ac540e.js"><link rel="prefetch" href="/assets/js/23.90ae6587.js"><link rel="prefetch" href="/assets/js/24.da76df88.js"><link rel="prefetch" href="/assets/js/25.37be9ee2.js"><link rel="prefetch" href="/assets/js/26.3cbec13b.js"><link rel="prefetch" href="/assets/js/27.c92aa904.js"><link rel="prefetch" href="/assets/js/28.3aa8d499.js"><link rel="prefetch" href="/assets/js/29.61003006.js"><link rel="prefetch" href="/assets/js/3.7deccebd.js"><link rel="prefetch" href="/assets/js/30.555537dc.js"><link rel="prefetch" href="/assets/js/31.88ae2960.js"><link rel="prefetch" href="/assets/js/32.d829f96e.js"><link rel="prefetch" href="/assets/js/33.2380dcac.js"><link rel="prefetch" href="/assets/js/34.8a59ae14.js"><link rel="prefetch" href="/assets/js/35.c20cb0f1.js"><link rel="prefetch" href="/assets/js/36.9b74499c.js"><link rel="prefetch" href="/assets/js/37.95fb3f43.js"><link rel="prefetch" href="/assets/js/38.a4052236.js"><link rel="prefetch" href="/assets/js/39.f26b48c1.js"><link rel="prefetch" href="/assets/js/4.e8819c6a.js"><link rel="prefetch" href="/assets/js/40.58b9e6bf.js"><link rel="prefetch" href="/assets/js/41.03dd6da3.js"><link rel="prefetch" href="/assets/js/42.ec9d4c68.js"><link rel="prefetch" href="/assets/js/43.dda9fc10.js"><link rel="prefetch" href="/assets/js/44.62e03393.js"><link rel="prefetch" href="/assets/js/45.706011b1.js"><link rel="prefetch" href="/assets/js/46.b733efbb.js"><link rel="prefetch" href="/assets/js/47.f3153f44.js"><link rel="prefetch" href="/assets/js/48.f378342e.js"><link rel="prefetch" href="/assets/js/49.6b3ce02a.js"><link rel="prefetch" href="/assets/js/5.645edf34.js"><link rel="prefetch" href="/assets/js/50.cc9f0b8e.js"><link rel="prefetch" href="/assets/js/51.14be5a22.js"><link rel="prefetch" href="/assets/js/52.8b2322c3.js"><link rel="prefetch" href="/assets/js/53.ab2ffa1d.js"><link rel="prefetch" href="/assets/js/54.abeed336.js"><link rel="prefetch" href="/assets/js/55.8d55b4ce.js"><link rel="prefetch" href="/assets/js/57.f4270e93.js"><link rel="prefetch" href="/assets/js/58.8279fe49.js"><link rel="prefetch" href="/assets/js/59.8274073f.js"><link rel="prefetch" href="/assets/js/6.4358c154.js"><link rel="prefetch" href="/assets/js/60.c26963e8.js"><link rel="prefetch" href="/assets/js/7.de072662.js"><link rel="prefetch" href="/assets/js/8.5bb9a4a6.js"><link rel="prefetch" href="/assets/js/9.c56fc9f0.js">
+  <link rel="stylesheet" href="/assets/css/0.styles.ef41ae34.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">从零开始的Rem486</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link router-link-active">
+  前端笔记
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link router-link-active">
+  前端笔记
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web/" class="sidebar-link">前端笔记</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/css/android-disable-img-preview.html" class="sidebar-link">禁用安卓点击图片预览</a></li><li><a href="/web/css/chrome-scroll-bar.html" class="sidebar-link">chrome自定义滚动条样式</a></li><li><a href="/web/css/css-hack.html" class="sidebar-link">css-hack</a></li><li><a href="/web/css/img-auto-size.html" class="sidebar-link">图片自适应宽高</a></li><li><a href="/web/css/inline-block-overflow-hidden.html" class="sidebar-link">inline-block使用overflow:hidden对齐问题</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>js</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/js/object-oriented-programming.html" class="sidebar-link">面向对象编程</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>移动端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/mobile/mobile-scroll-through.html" class="sidebar-link">滚动穿透</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/tool/git-set-origin-url.html" class="sidebar-link">git-配置修改远程仓库地址</a></li><li><a href="/web/tool/git-delete-branch.html" class="sidebar-link">git-删除远程分支</a></li><li><a href="/web/tool/git-minor-version.html" class="sidebar-link">git-快速获取小版本</a></li><li><a href="/web/tool/http-TIME_WAIT-CLOSE_WAIT.html" class="sidebar-link">http-TIMEWAIT，CLOSEWAIT异常</a></li><li><a href="/web/tool/ssh-password-free-login.html" class="sidebar-link">linux服务器-免密登录及设置多个key</a></li><li><a href="/web/tool/npm-common-use-tips.html" class="sidebar-link">npm-常用操作技巧</a></li><li><a href="/web/tool/npm-version-management.html" class="sidebar-link">npm-管理项目版本号</a></li><li><a href="/web/tool/reg-basic.html" class="sidebar-link">正则-入门</a></li><li><a href="/web/tool/reg-escape.html" class="sidebar-link">正则-转义特殊字符</a></li><li><a href="/web/tool/md-basic.html" class="sidebar-link">md-Markdown基本语法</a></li><li><a href="/web/tool/webpack-error.html" class="active sidebar-link">webpack-常见错误</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/tool/webpack-error.html#_1-错误提示-invalid-host-header" class="sidebar-link">1. 错误提示 invalid host header</a></li><li class="sidebar-sub-header"><a href="/web/tool/webpack-error.html#_2-不能使用-ip-访问" class="sidebar-link">2. 不能使用 ip 访问</a></li><li class="sidebar-sub-header"><a href="/web/tool/webpack-error.html#_3-错误提示-getaddrinfo-enotfound-localhost" class="sidebar-link">3. 错误提示 getaddrinfo ENOTFOUND localhost</a></li><li class="sidebar-sub-header"><a href="/web/tool/webpack-error.html#_4-升级-vue-loader-v14之后，css-无法加载成功" class="sidebar-link">4. 升级 vue-loader v14之后，css 无法加载成功</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/database/mongodb-error.html" class="sidebar-link">mongodb-常见错误</a></li><li><a href="/web/database/mongodb-memo.html" class="sidebar-link">mongodb-备忘录</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>杂项</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/other/article-collection.html" class="sidebar-link">文档收藏</a></li><li><a href="/web/other/node-spider-basic.html" class="sidebar-link">node-爬虫初体验</a></li><li><a href="/web/other/idea-registered.html" class="sidebar-link">idea-注册码持续更新</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack-常见错误"><a href="#webpack-常见错误" class="header-anchor">#</a> webpack-常见错误</h1> <p>创建时间：2019-09-25</p> <h3 id="webpack-dev-server"><a href="#webpack-dev-server" class="header-anchor">#</a> webpack-dev-server</h3> <h2 id="_1-错误提示-invalid-host-header"><a href="#_1-错误提示-invalid-host-header" class="header-anchor">#</a> 1. 错误提示 <code>invalid host header</code></h2> <p><strong>问题原因</strong>
+webpack-dev-server 增加了对 <code>host header</code> 正确性的检测，以屏蔽未经授权的访问。开发者需要在执行 webpack-dev-server 命令时手动添加 –public 选项，取值为授权的 host，否则就会出现这个问题，也就是“Invalid Host Header”。
+<strong>解决方案</strong></p> <ol><li>执行 webpack-dev-server 命令时手动添加 –public 选项，取值为授权的
+host，这是官方建议的做法，目的是为了安全。</li> <li>设置 webpack-dev-server 的配置项 disableHostCheck为 true 以禁用这一检测，如果开发者使用了代理，或在开发环境中不 care 这些安全问题，该设置可以直接斩草除根。</li></ol> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;devServer&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;disableHostCheck&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><blockquote><p>host 为 localhost 或 127.0.0.1 时不会受阻。
+只有使用 webpack-dev-server 或webpack-dev-middleware 时会进行该项检测，webpack 和 打包后的代码不受此影响。</p></blockquote> <h2 id="_2-不能使用-ip-访问"><a href="#_2-不能使用-ip-访问" class="header-anchor">#</a> 2. 不能使用 <code>ip</code> 访问</h2> <p><strong>问题描述</strong>
+webpack-dev-server 服务启动后，我们可以直接在 <code>http://localhost:端口</code> 进行访问，但是如果内网内其他客户端如果想要访问的话，换成 <code>http://ip:端口</code> 却无法访问。
+<strong>解决方案</strong></p> <ol><li>在执行 <code>webpack-dev-server</code> 命令的时候加上参数 <code>--host 0,0,0,0</code> 。以 vue 项目为栗，修改 <code>package.json</code>：</li></ol> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack-dev-server --inline --progress --config build/webpack.dev.conf.js&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack-dev-server --inline --host 0.0.0.0 --progress --config build/webpack.dev.conf.js&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol start="2"><li>设置 webpack-dev-server 的配置项的 host 为 本机ip</li></ol> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;devServer&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;host&quot;</span><span class="token operator">:</span> <span class="token string">&quot;192.168.1.111&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>修改后，重启，就可以使用 <code>http://192.168.1.111:端口</code> 进行访问。</p> <blockquote><p>缺点：ip 不一样，每次都要换。</p></blockquote> <blockquote><p>友情提示：ip 访问，一定要确保设备在同一个网络。</p></blockquote> <h2 id="_3-错误提示-getaddrinfo-enotfound-localhost"><a href="#_3-错误提示-getaddrinfo-enotfound-localhost" class="header-anchor">#</a> 3. 错误提示 <code>getaddrinfo ENOTFOUND localhost</code></h2> <p>localhost 可以是任何配置的开发域名。问题所在是 dns 解析错误，所以配置正确的 hosts
+修改 hosts</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>// mac vi /ect/hosts
+
+127.0.0.1    localhost
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_4-升级-vue-loader-v14之后，css-无法加载成功"><a href="#_4-升级-vue-loader-v14之后，css-无法加载成功" class="header-anchor">#</a> 4. 升级 vue-loader v14之后，css 无法加载成功</h2> <p>之前使用的配置项 <code>extractCSS</code> 为 <code>true</code> 无法加载成功，需要修改。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> ExtractTextPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'extract-text-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> webpackConf <span class="token operator">=</span> <span class="token punctuation">{</span>
+  module<span class="token operator">:</span><span class="token punctuation">{</span>
+    rules<span class="token operator">:</span><span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex">/\.vue$/</span><span class="token punctuation">,</span>
+        loader<span class="token operator">:</span> <span class="token string">'vue-loader'</span><span class="token punctuation">,</span>
+        options<span class="token operator">:</span> <span class="token punctuation">{</span>
+          extractCSS<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">ExtractTextPlugin</span><span class="token punctuation">(</span><span class="token string">&quot;style.css&quot;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>配置 loader：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> ExtractTextPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'extract-text-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> webpackConf <span class="token operator">=</span> <span class="token punctuation">{</span>
+  module<span class="token operator">:</span><span class="token punctuation">{</span>
+    rules<span class="token operator">:</span><span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex">/\.vue$/</span><span class="token punctuation">,</span>
+        loader<span class="token operator">:</span> <span class="token string">'vue-loader'</span><span class="token punctuation">,</span>
+        options<span class="token operator">:</span> <span class="token punctuation">{</span>
+          loaders<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token operator">?</span> <span class="token punctuation">{</span>
+                      css<span class="token operator">:</span> ExtractTextPlugin<span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                        use<span class="token operator">:</span> <span class="token string">'css-loader'</span><span class="token punctuation">,</span>
+                        fallback<span class="token operator">:</span> <span class="token string">'vue-style-loader'</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">ExtractTextPlugin</span><span class="token punctuation">(</span><span class="token string">&quot;style.css&quot;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/24/2020, 5:25:23 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web/tool/md-basic.html" class="prev">
+        md-Markdown基本语法
+      </a></span> <span class="next"><a href="/web/database/mongodb-error.html">
+        mongodb-常见错误
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.cef324cc.js" defer></script><script src="/assets/js/2.3904a8d8.js" defer></script><script src="/assets/js/56.3d91ace4.js" defer></script>
+</body>
+<script type="text/javascript" async
+        src="https://s5.cnzz.com/z_stat.php?id=1275911745&web_id=1275911745&show=none"></script>
+<script>
+(function () {
+  var bp = document.createElement('script');
+  // var curProtocol = window.location.protocol.split(':')[0];
+  // if (curProtocol === 'https') {
+  //   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  // }
+  // else {
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  // }
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</html>
