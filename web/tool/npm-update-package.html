@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>npm - 一键更新依赖包 | 从零开始的故事</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="前端博客,前端知识,前端备忘录,程序员笔记,css,html,javascript,git,linux">
+  <meta name="baidu-site-verification" content="utzmmiwMvm"/>
+  <link rel="icon" href="/img/logo.ico">
+  <meta name="description" content="随着项目的迭代，依赖包可能也都升级了，如何快速的升级各种依赖到最新版本，npm和yarn都可以。">
+    <meta property="article:published_time" content="2020-11-04T00:00:00.000Z">
+    <meta property="article:modified_time" content="2020-11-04T02:16:01.000Z">
+    <meta property="og:site_name" content="从零开始的故事">
+    <meta property="og:title" content="npm - 一键更新依赖包">
+    <meta property="og:description" content="随着项目的迭代，依赖包可能也都升级了，如何快速的升级各种依赖到最新版本，npm和yarn都可以。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/web/tool/npm-update-package.html">
+    <meta name="twitter:title" content="npm - 一键更新依赖包">
+    <meta name="twitter:description" content="随着项目的迭代，依赖包可能也都升级了，如何快速的升级各种依赖到最新版本，npm和yarn都可以。">
+    <meta name="twitter:url" content="/web/tool/npm-update-package.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="前端, 工程化, npm, yarn">
+    <meta property="article:tag" content="前端">
+  <link rel="preload" href="/assets/css/0.styles.01a70614.css" as="style"><link rel="preload" href="/assets/js/app.25b9da82.js" as="script"><link rel="preload" href="/assets/js/2.2288f99c.js" as="script"><link rel="preload" href="/assets/js/60.0ebeed7c.js" as="script"><link rel="prefetch" href="/assets/js/10.7776cb41.js"><link rel="prefetch" href="/assets/js/11.d192e61f.js"><link rel="prefetch" href="/assets/js/12.763ef023.js"><link rel="prefetch" href="/assets/js/13.6f9210f3.js"><link rel="prefetch" href="/assets/js/14.da428c6b.js"><link rel="prefetch" href="/assets/js/15.41d6cd9c.js"><link rel="prefetch" href="/assets/js/16.bba828b6.js"><link rel="prefetch" href="/assets/js/17.b2ef29e3.js"><link rel="prefetch" href="/assets/js/18.a3fdd830.js"><link rel="prefetch" href="/assets/js/19.f30c1371.js"><link rel="prefetch" href="/assets/js/20.85e892e4.js"><link rel="prefetch" href="/assets/js/21.1126fa4e.js"><link rel="prefetch" href="/assets/js/22.82ca2022.js"><link rel="prefetch" href="/assets/js/23.6ae49d0e.js"><link rel="prefetch" href="/assets/js/24.8367dc95.js"><link rel="prefetch" href="/assets/js/25.81871e58.js"><link rel="prefetch" href="/assets/js/26.a4ae1a1d.js"><link rel="prefetch" href="/assets/js/27.d471e57c.js"><link rel="prefetch" href="/assets/js/28.49121584.js"><link rel="prefetch" href="/assets/js/29.6c0cebc7.js"><link rel="prefetch" href="/assets/js/3.c593cb51.js"><link rel="prefetch" href="/assets/js/30.b8eb11eb.js"><link rel="prefetch" href="/assets/js/31.ffe41c26.js"><link rel="prefetch" href="/assets/js/32.e763ef85.js"><link rel="prefetch" href="/assets/js/33.1bc2ba31.js"><link rel="prefetch" href="/assets/js/34.3eba0bb2.js"><link rel="prefetch" href="/assets/js/35.a30c9597.js"><link rel="prefetch" href="/assets/js/36.a28b23c1.js"><link rel="prefetch" href="/assets/js/37.aeb55c81.js"><link rel="prefetch" href="/assets/js/38.310b9f13.js"><link rel="prefetch" href="/assets/js/39.0e3d510d.js"><link rel="prefetch" href="/assets/js/4.f78ad25d.js"><link rel="prefetch" href="/assets/js/40.0f537c57.js"><link rel="prefetch" href="/assets/js/41.4486e162.js"><link rel="prefetch" href="/assets/js/42.9e80fe9c.js"><link rel="prefetch" href="/assets/js/43.d7b64dcd.js"><link rel="prefetch" href="/assets/js/44.8bda5180.js"><link rel="prefetch" href="/assets/js/45.0c0ac1c3.js"><link rel="prefetch" href="/assets/js/46.eb35b468.js"><link rel="prefetch" href="/assets/js/47.908eca3a.js"><link rel="prefetch" href="/assets/js/48.74993698.js"><link rel="prefetch" href="/assets/js/49.da651341.js"><link rel="prefetch" href="/assets/js/5.9f74d007.js"><link rel="prefetch" href="/assets/js/50.c473e5ae.js"><link rel="prefetch" href="/assets/js/51.7cdef24f.js"><link rel="prefetch" href="/assets/js/52.a9f6918a.js"><link rel="prefetch" href="/assets/js/53.5ad59d99.js"><link rel="prefetch" href="/assets/js/54.092e9dd8.js"><link rel="prefetch" href="/assets/js/55.a1f0852b.js"><link rel="prefetch" href="/assets/js/56.f6cf9f3f.js"><link rel="prefetch" href="/assets/js/57.0a9438be.js"><link rel="prefetch" href="/assets/js/58.cc710049.js"><link rel="prefetch" href="/assets/js/59.220dcca0.js"><link rel="prefetch" href="/assets/js/6.89208ffa.js"><link rel="prefetch" href="/assets/js/61.fa78dec1.js"><link rel="prefetch" href="/assets/js/62.690c2408.js"><link rel="prefetch" href="/assets/js/63.3d9ab920.js"><link rel="prefetch" href="/assets/js/64.ed2b7322.js"><link rel="prefetch" href="/assets/js/65.4cf433c8.js"><link rel="prefetch" href="/assets/js/66.250291a0.js"><link rel="prefetch" href="/assets/js/67.37205052.js"><link rel="prefetch" href="/assets/js/68.9cbbe6f7.js"><link rel="prefetch" href="/assets/js/7.8bc7aca7.js"><link rel="prefetch" href="/assets/js/8.70d6ce90.js"><link rel="prefetch" href="/assets/js/9.1a299ddf.js">
+  <link rel="stylesheet" href="/assets/css/0.styles.01a70614.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">从零开始的故事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link router-link-active">
+  前端笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link router-link-active">
+  前端笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web/" class="sidebar-link">前端笔记</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/css/android-disable-img-preview.html" class="sidebar-link">禁用安卓点击图片预览</a></li><li><a href="/web/css/chrome-scroll-bar.html" class="sidebar-link">chrome自定义滚动条样式</a></li><li><a href="/web/css/css-hack.html" class="sidebar-link">css - hack</a></li><li><a href="/web/css/img-auto-size.html" class="sidebar-link">图片自适应宽高</a></li><li><a href="/web/css/inline-block-overflow-hidden.html" class="sidebar-link">inline-block 对齐</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>js</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/js/object-oriented-programming.html" class="sidebar-link">面向对象编程</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>移动端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/mobile/mobile-scroll-through.html" class="sidebar-link">滚动穿透</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/tool/babel-translate.html" class="sidebar-link">babel - preset-env和polyfill</a></li><li><a href="/web/tool/bash-pwd.html" class="sidebar-link">bash - 获取脚本的运行目录</a></li><li><a href="/web/tool/git-set-origin-url.html" class="sidebar-link">git - 配置/修改远程仓库地址</a></li><li><a href="/web/tool/git-delete-branch.html" class="sidebar-link">git - 删除远程分支</a></li><li><a href="/web/tool/git-minor-version.html" class="sidebar-link">git - 快速获取小版本</a></li><li><a href="/web/tool/git-command.html" class="sidebar-link">git - 常用命令</a></li><li><a href="/web/tool/http-status.html" class="sidebar-link">http - 状态码</a></li><li><a href="/web/tool/http-TIME_WAIT-CLOSE_WAIT.html" class="sidebar-link">http - TIMEWAIT，CLOSEWAIT异常</a></li><li><a href="/web/tool/JSON-schema-basic.html" class="sidebar-link">JSON Schema - 入门</a></li><li><a href="/web/tool/linux-command.html" class="sidebar-link">linux - 常用命令</a></li><li><a href="/web/tool/linux-dns.html" class="sidebar-link">linux - 修改DNS</a></li><li><a href="/web/tool/ssh-password-free-login.html" class="sidebar-link">ssh - 免密登录及设置多个key</a></li><li><a href="/web/tool/npm-common-use-tips.html" class="sidebar-link">npm - 常用操作技巧</a></li><li><a href="/web/tool/npm-package.json.html" class="sidebar-link">npm - package.json属性详解</a></li><li><a href="/web/tool/npm-version-management.html" class="sidebar-link">npm - 管理项目版本号</a></li><li><a href="/web/tool/npm-update-package.html" class="active sidebar-link">npm - 一键更新依赖包</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/web/tool/reg-basic.html" class="sidebar-link">正则 - 入门</a></li><li><a href="/web/tool/reg-escape.html" class="sidebar-link">正则 - 转义特殊字符</a></li><li><a href="/web/tool/md-basic.html" class="sidebar-link">Markdown 基本语法</a></li><li><a href="/web/tool/node-version-control.html" class="sidebar-link">管理nodejs版本</a></li><li><a href="/web/tool/webpack-error.html" class="sidebar-link">webpack - 常见错误</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/database/mongodb-error.html" class="sidebar-link">mongodb - 常见错误</a></li><li><a href="/web/database/mongodb-memo.html" class="sidebar-link">mongodb - 备忘录</a></li><li><a href="/web/database/mysql-start-stop.html" class="sidebar-link">mysql - 启动和关闭</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>杂项</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/other/article-collection.html" class="sidebar-link">文档收藏</a></li><li><a href="/web/other/node-spider-basic.html" class="sidebar-link">node - 爬虫初体验</a></li><li><a href="/web/other/idea-registered.html" class="sidebar-link">idea - 注册码持续更新</a></li><li><a href="/web/other/mac-modify-host.html" class="sidebar-link">mac修改host</a></li><li><a href="/web/other/socket-error.html" class="sidebar-link">socket - 常见错误</a></li><li><a href="/web/other/timestamp-basic.html" class="sidebar-link">timestamp - 日期格式</a></li><li><a href="/web/other/websocket-basic.html" class="sidebar-link">webSocket - 入门</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="npm-一键更新依赖包"><a href="#npm-一键更新依赖包" class="header-anchor">#</a> npm - 一键更新依赖包</h1> <blockquote><p>随着项目的迭代，依赖包可能也都升级了，如何快速的升级各种依赖到最新版本</p></blockquote> <p>一个一个手动升级:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># npm</span>
+<span class="token function">npm</span> i vue@latest
+<span class="token comment"># yarn</span>
+<span class="token function">yarn</span> <span class="token function">add</span> vue@latest
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>批量操作</p> <h3 id="npm-check"><a href="#npm-check" class="header-anchor">#</a> npm-check</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">npm</span> i -g npm-check
+npm-check -u
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>输出如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>? Choose which packages to update.
+ Space to select. Enter to start upgrading. Control-C to cancel.
+
+ Patch Update Backwards-compatible bug fixes.
+&gt;( ) vue             2.6.11   ❯  2.6.12   https://github.com/vuejs/vue#readme
+
+ Minor Update New backwards-compatible features.
+ ( ) @vue/test-utils devDep   1.0.0-beta.29  ❯  1.1.1   https://github.com/vuejs/vue-test-utils#readme
+ 
+ Major Update Potentially breaking API changes. Use caution.
+ ( ) cross-env       5.2.1   ❯  7.0.2   https://github.com/kentcdodds/cross-env#readme
+
+ Non-Semver Versions less than 1.0.0, caution.
+ ( ) axios           0.18.1  ❯  0.21.0  https://github.com/axios/axios
+
+(Move up and down to reveal more choices)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>空格切换是否更新，Control + C 取消更新，回车执行更新。</p> <h3 id="使用-yarn"><a href="#使用-yarn" class="header-anchor">#</a> 使用 yarn</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">yarn</span> upgrade-interactive --latest
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>输出如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>yarn upgrade-interactive v1.22.5
+info Color legend :
+ &quot;&lt;red&gt;&quot;    : Major Update backward-incompatible updates
+ &quot;&lt;yellow&gt;&quot; : Minor Update backward-compatible features
+ &quot;&lt;green&gt;&quot;  : Patch Update backward-compatible bug fixes
+? Choose which packages to update. (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection)
+ devDependencies
+   name                    range   from       to      url
+&gt;( ) @vue/test-utils         latest  1.0.0-beta.29  ❯  1.1.1   https://github.com/vuejs/vue-test-utils#readme
+
+ dependencies
+   name                    range   from       to      url
+ ( ) axios                   latest  0.18.1  ❯  0.21.0  https://github.com/axios/axios
+ ( ) cross-env               latest  5.2.1   ❯  7.0.2   https://github.com/kentcdodds/cross-env#readme
+ ( ) vue                     latest  2.6.11  ❯  2.6.12  https://github.com/vuejs/vue#readme
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>操作一样，空格切换是否更新，Control + C 取消更新，回车执行更新。yarn 还提供了全选，按 A。</p> <p><strong>更新命令对照表</strong></p> <table><thead><tr><th>说明</th> <th>yarn</th> <th>npm-check</th></tr></thead> <tbody><tr><td>更新项目依赖，没有交互</td> <td>yarn upgrade --latest</td> <td>npm-check -y</td></tr> <tr><td>更新项目依赖，有交互</td> <td>yarn upgrade-interactive --latest</td> <td>npm-check -u</td></tr> <tr><td>更新全局依赖，没有交互</td> <td>yarn global upgrade --latest</td> <td>npm-check -g -y</td></tr> <tr><td>更新全局依赖，有交互</td> <td>yarn global upgrade-interactive --latest</td> <td>npm-check -g -u</td></tr></tbody></table> <p><strong>检查原理</strong>
+yarn 是根据 yarn.lock 文件来检测版本是否是最新的，所以项目是使用 npm 安装依赖包，更新前要运行 yarn install 一下。</p> <p>npm-check 是检测 package.json 文件，项目存在 node_modules 文件夹即可更新。</p> <h3 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h3> <ul><li><a href="https://www.cnblogs.com/stevexu/p/10744765.html" target="_blank" rel="noopener noreferrer">一行命令更新所有 npm 依赖包<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">11/4/2020, 10:16:01 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web/tool/npm-version-management.html" class="prev">
+        npm - 管理项目版本号
+      </a></span> <span class="next"><a href="/web/tool/reg-basic.html">
+        正则 - 入门
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.25b9da82.js" defer></script><script src="/assets/js/2.2288f99c.js" defer></script><script src="/assets/js/60.0ebeed7c.js" defer></script>
+<a style="text-align: center;display: block" href="https://beian.miit.gov.cn">蜀ICP备18030457号</a>
+</body>
+<script type="text/javascript" async
+        src="//s5.cnzz.com/z_stat.php?id=1275911745&web_id=1275911745&show=none"></script>
+<script>
+(function () {
+  var bp = document.createElement('script');
+  // var curProtocol = window.location.protocol.split(':')[0];
+  // if (curProtocol === 'https') {
+  //   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  // }
+  // else {
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  // }
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</html>
