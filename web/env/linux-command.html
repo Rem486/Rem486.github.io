@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>linux - 常用命令 | 从零开始的故事</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="前端博客,前端知识,前端备忘录,程序员笔记,css,html,javascript,git,linux">
+  <meta name="baidu-site-verification" content="utzmmiwMvm"/>
+  <link rel="icon" href="/img/logo.ico">
+  <meta name="description" content="linux基础是开发必备，整理收集常用linux命令">
+    <meta property="article:published_time" content="2019-10-30T00:00:00.000Z">
+    <meta property="article:modified_time" content="2021-01-27T02:38:09.000Z">
+    <meta property="og:site_name" content="从零开始的故事">
+    <meta property="og:title" content="linux - 常用命令">
+    <meta property="og:description" content="linux基础是开发必备，整理收集常用linux命令">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/web/env/linux-command.html">
+    <meta name="twitter:title" content="linux - 常用命令">
+    <meta name="twitter:description" content="linux基础是开发必备，整理收集常用linux命令">
+    <meta name="twitter:url" content="/web/env/linux-command.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="linux, 查看端口号, 查看进程, 日志, 内存占用">
+    <meta property="article:tag" content="linux">
+  <link rel="preload" href="/assets/css/0.styles.5b2ad578.css" as="style"><link rel="preload" href="/assets/js/app.7e3f72b7.js" as="script"><link rel="preload" href="/assets/js/2.30ada3ab.js" as="script"><link rel="preload" href="/assets/js/30.397a4535.js" as="script"><link rel="prefetch" href="/assets/js/10.75a6d394.js"><link rel="prefetch" href="/assets/js/11.0011d8fb.js"><link rel="prefetch" href="/assets/js/12.5058ce04.js"><link rel="prefetch" href="/assets/js/13.ab94664b.js"><link rel="prefetch" href="/assets/js/14.9aae8975.js"><link rel="prefetch" href="/assets/js/15.96645ce6.js"><link rel="prefetch" href="/assets/js/16.79cd6cea.js"><link rel="prefetch" href="/assets/js/17.a0a11dbf.js"><link rel="prefetch" href="/assets/js/18.7835398f.js"><link rel="prefetch" href="/assets/js/19.29501e29.js"><link rel="prefetch" href="/assets/js/20.6c9eae9e.js"><link rel="prefetch" href="/assets/js/21.bfe338ea.js"><link rel="prefetch" href="/assets/js/22.a1d615e6.js"><link rel="prefetch" href="/assets/js/23.f796c70a.js"><link rel="prefetch" href="/assets/js/24.7054606e.js"><link rel="prefetch" href="/assets/js/25.9c546fd8.js"><link rel="prefetch" href="/assets/js/26.af336e94.js"><link rel="prefetch" href="/assets/js/27.37b3fbc0.js"><link rel="prefetch" href="/assets/js/28.19f4d66b.js"><link rel="prefetch" href="/assets/js/29.08f62720.js"><link rel="prefetch" href="/assets/js/3.fbba67ee.js"><link rel="prefetch" href="/assets/js/31.65543b55.js"><link rel="prefetch" href="/assets/js/32.a59ff710.js"><link rel="prefetch" href="/assets/js/33.0787f5b5.js"><link rel="prefetch" href="/assets/js/34.e4bcc59c.js"><link rel="prefetch" href="/assets/js/35.6ae9cfab.js"><link rel="prefetch" href="/assets/js/36.99f2c452.js"><link rel="prefetch" href="/assets/js/37.7274338f.js"><link rel="prefetch" href="/assets/js/38.c1a52afd.js"><link rel="prefetch" href="/assets/js/39.13a99f6b.js"><link rel="prefetch" href="/assets/js/4.53cda4d2.js"><link rel="prefetch" href="/assets/js/40.e609e28d.js"><link rel="prefetch" href="/assets/js/41.839a7ef7.js"><link rel="prefetch" href="/assets/js/42.09ecdc97.js"><link rel="prefetch" href="/assets/js/43.af127d41.js"><link rel="prefetch" href="/assets/js/44.a574f4b3.js"><link rel="prefetch" href="/assets/js/45.e0b8184e.js"><link rel="prefetch" href="/assets/js/46.8411dd31.js"><link rel="prefetch" href="/assets/js/47.06e5fdbc.js"><link rel="prefetch" href="/assets/js/48.2deadea8.js"><link rel="prefetch" href="/assets/js/49.440e8d36.js"><link rel="prefetch" href="/assets/js/5.725b75ae.js"><link rel="prefetch" href="/assets/js/50.81864675.js"><link rel="prefetch" href="/assets/js/51.8bfcb0f0.js"><link rel="prefetch" href="/assets/js/52.71b4acb7.js"><link rel="prefetch" href="/assets/js/53.0875fe7d.js"><link rel="prefetch" href="/assets/js/54.cc443af0.js"><link rel="prefetch" href="/assets/js/55.4b07ee8b.js"><link rel="prefetch" href="/assets/js/56.8772b3ff.js"><link rel="prefetch" href="/assets/js/57.a2708584.js"><link rel="prefetch" href="/assets/js/58.b2075d37.js"><link rel="prefetch" href="/assets/js/59.40366342.js"><link rel="prefetch" href="/assets/js/6.7f2087be.js"><link rel="prefetch" href="/assets/js/60.66c4c2dd.js"><link rel="prefetch" href="/assets/js/61.eb83ac06.js"><link rel="prefetch" href="/assets/js/62.7d700c15.js"><link rel="prefetch" href="/assets/js/63.10f2739a.js"><link rel="prefetch" href="/assets/js/64.f1a35716.js"><link rel="prefetch" href="/assets/js/65.283e0fb4.js"><link rel="prefetch" href="/assets/js/66.1feeedf6.js"><link rel="prefetch" href="/assets/js/67.17b44327.js"><link rel="prefetch" href="/assets/js/68.462e1569.js"><link rel="prefetch" href="/assets/js/69.5c403c35.js"><link rel="prefetch" href="/assets/js/7.1e7abac5.js"><link rel="prefetch" href="/assets/js/70.6bd6174b.js"><link rel="prefetch" href="/assets/js/71.7e2c8ad6.js"><link rel="prefetch" href="/assets/js/72.3403b2e2.js"><link rel="prefetch" href="/assets/js/73.2b37780f.js"><link rel="prefetch" href="/assets/js/74.53f8d4e1.js"><link rel="prefetch" href="/assets/js/75.673b1e13.js"><link rel="prefetch" href="/assets/js/8.ec9cd990.js"><link rel="prefetch" href="/assets/js/9.87cf36a8.js">
+  <link rel="stylesheet" href="/assets/css/0.styles.5b2ad578.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">从零开始的故事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link router-link-active">
+  前端笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/" class="nav-link router-link-active">
+  前端笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web/" aria-current="page" class="sidebar-link">前端笔记</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/css/android-disable-img-preview.html" class="sidebar-link">禁用安卓点击图片预览</a></li><li><a href="/web/css/chrome-scroll-bar.html" class="sidebar-link">chrome自定义滚动条样式</a></li><li><a href="/web/css/css-hack.html" class="sidebar-link">css - hack</a></li><li><a href="/web/css/css-name.html" class="sidebar-link">css - 命名规范</a></li><li><a href="/web/css/img-auto-size.html" class="sidebar-link">图片自适应宽高</a></li><li><a href="/web/css/inline-block-overflow-hidden.html" class="sidebar-link">inline-block 对齐</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>js</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/js/object-oriented-programming.html" class="sidebar-link">面向对象编程</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>移动端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/mobile/mobile-scroll-through.html" class="sidebar-link">滚动穿透</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/tool/babel-basic.html" class="sidebar-link">babel-basic</a></li><li><a href="/web/tool/babel-translate.html" class="sidebar-link">babel - preset-env和polyfill</a></li><li><a href="/web/tool/bash-pwd.html" class="sidebar-link">bash - 获取脚本的运行目录</a></li><li><a href="/web/tool/core-js.html" class="sidebar-link">core-js</a></li><li><a href="/web/tool/git-set-origin-url.html" class="sidebar-link">git - 配置/修改远程仓库地址</a></li><li><a href="/web/tool/git-delete-branch.html" class="sidebar-link">git - 删除远程分支</a></li><li><a href="/web/tool/git-minor-version.html" class="sidebar-link">git - 快速获取小版本</a></li><li><a href="/web/tool/git-command.html" class="sidebar-link">git - 常用命令</a></li><li><a href="/web/tool/http-status.html" class="sidebar-link">http - 状态码</a></li><li><a href="/web/tool/http-TIME_WAIT-CLOSE_WAIT.html" class="sidebar-link">http - TIMEWAIT，CLOSEWAIT异常</a></li><li><a href="/web/tool/JSON-schema-basic.html" class="sidebar-link">JSON Schema - 入门</a></li><li><a href="/web/tool/ssh-password-free-login.html" class="sidebar-link">ssh - 免密登录及设置多个key</a></li><li><a href="/web/tool/npm-common-use-tips.html" class="sidebar-link">npm - 常用操作技巧</a></li><li><a href="/web/tool/npm-package.json.html" class="sidebar-link">npm - package.json属性详解</a></li><li><a href="/web/tool/npm-version-management.html" class="sidebar-link">npm - 管理项目版本号</a></li><li><a href="/web/tool/npm-update-package.html" class="sidebar-link">npm - 一键更新依赖包</a></li><li><a href="/web/tool/reg-basic.html" class="sidebar-link">正则 - 入门</a></li><li><a href="/web/tool/reg-escape.html" class="sidebar-link">正则 - 转义特殊字符</a></li><li><a href="/web/tool/md-basic.html" class="sidebar-link">Markdown 基本语法</a></li><li><a href="/web/tool/webpack-error.html" class="sidebar-link">webpack - 常见错误</a></li><li><a href="/web/tool/webpack-split-chunks.html" class="sidebar-link">webpack - 使用 splitChunks 分离第三方库</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>环境</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/env/docker-error.html" class="sidebar-link">docker - 常见报错</a></li><li><a href="/web/env/linux-command.html" aria-current="page" class="active sidebar-link">linux - 常用命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/env/linux-command.html#_1-查看端口占用" class="sidebar-link">1.查看端口占用</a></li><li class="sidebar-sub-header"><a href="/web/env/linux-command.html#_2-查看和终止进程" class="sidebar-link">2.查看和终止进程</a></li><li class="sidebar-sub-header"><a href="/web/env/linux-command.html#_3-查看日志" class="sidebar-link">3.查看日志</a></li><li class="sidebar-sub-header"><a href="/web/env/linux-command.html#_4-查看内存占用" class="sidebar-link">4.查看内存占用</a></li><li class="sidebar-sub-header"><a href="/web/env/linux-command.html#_5-查看文件大小" class="sidebar-link">5.查看文件大小</a></li><li class="sidebar-sub-header"><a href="/web/env/linux-command.html#_6-拆分-log-文件" class="sidebar-link">6.拆分 log 文件</a></li></ul></li><li><a href="/web/env/linux-dns.html" class="sidebar-link">linux - 修改DNS</a></li><li><a href="/web/env/node-version-control.html" class="sidebar-link">管理nodejs版本</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/database/mongodb-error.html" class="sidebar-link">mongodb - 常见错误</a></li><li><a href="/web/database/mongodb-memo.html" class="sidebar-link">mongodb - 备忘录</a></li><li><a href="/web/database/mysql-start-stop.html" class="sidebar-link">mysql - 启动和关闭</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>杂项</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/other/article-collection.html" class="sidebar-link">文档收藏</a></li><li><a href="/web/other/node-spider-basic.html" class="sidebar-link">node - 爬虫初体验</a></li><li><a href="/web/other/idea-registered.html" class="sidebar-link">idea - 注册码持续更新</a></li><li><a href="/web/other/ie-image-dom7009.html" class="sidebar-link">IE - 图片加载报错DOM7009</a></li><li><a href="/web/other/mac-modify-host.html" class="sidebar-link">mac修改host</a></li><li><a href="/web/other/socket-error.html" class="sidebar-link">socket - 常见错误</a></li><li><a href="/web/other/timestamp-basic.html" class="sidebar-link">timestamp - 日期格式</a></li><li><a href="/web/other/websocket-basic.html" class="sidebar-link">webSocket - 入门</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux-常用命令"><a href="#linux-常用命令" class="header-anchor">#</a> linux - 常用命令</h1> <h2 id="_1-查看端口占用"><a href="#_1-查看端口占用" class="header-anchor">#</a> 1.查看端口占用</h2> <ol><li>使用 <code>lsof</code></li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">lsof</span> -i:端口号
+
+<span class="token function">lsof</span> -i:9229 <span class="token comment"># 查看9229端口占用</span>
+<span class="token comment"># COMMAND   PID USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME</span>
+<span class="token comment"># node    21848 root   22u  IPv4 9910325      0t0  TCP localhost:9229 (LISTEN)</span>
+
+<span class="token function">lsof</span> foo.txt <span class="token comment"># 显示开启了foo.txt的进程</span>
+<span class="token function">lsof</span> -c abc <span class="token comment"># 显示abc进程现在打开的文件</span>
+<span class="token function">lsof</span> -c -p <span class="token number">1234</span> <span class="token comment"># 列出进程号为1234的进程所打开的文件</span>
+<span class="token function">lsof</span> -g gid <span class="token comment"># 显示归属gid的进程情况</span>
+<span class="token function">lsof</span> +d /usr/local/ <span class="token comment"># 显示目录下被进程开启的文件</span>
+<span class="token function">lsof</span> +D /usr/local/ <span class="token comment"># 同上，但是会搜索目录下的目录，时间较长</span>
+<span class="token function">lsof</span> -d <span class="token number">4</span> <span class="token comment"># 显示使用fd为4的进程</span>
+<span class="token function">lsof</span> -i -U <span class="token comment"># 显示所有打开的端口和UNIX domain文件</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><ol start="2"><li>使用 <code>netstat</code></li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">netstat</span> -anp<span class="token operator">|</span><span class="token function">grep</span> <span class="token number">80</span>
+<span class="token comment"># tcp        0      0 0.0.0.0:8000            0.0.0.0:*               LISTEN      1836/nginx: master</span>
+<span class="token comment"># tcp        0      0 0.0.0.0:8001            0.0.0.0:*               LISTEN      1836/nginx: master</span>
+<span class="token comment"># tcp        0      0 0.0.0.0:8002            0.0.0.0:*               LISTEN      1836/nginx: master</span>
+<span class="token comment"># tcp        0      0 0.0.0.0:8003            0.0.0.0:*               LISTEN      1836/nginx: master</span>
+<span class="token comment"># tcp        0      0 0.0.0.0:8004            0.0.0.0:*               LISTEN      1836/nginx: master</span>
+<span class="token comment"># tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      1836/nginx: master</span>
+
+<span class="token comment"># 或者</span>
+<span class="token function">netstat</span> -tunlp <span class="token operator">|</span><span class="token function">grep</span> <span class="token number">80</span>
+<span class="token function">netstat</span> -ntlp   <span class="token comment"># 查看当前所有tcp端口</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>参数介绍：</p> <ul><li>-t (tcp) 仅显示tcp相关选项</li> <li>-u (udp)仅显示udp相关选项</li> <li>-n 拒绝显示别名，能显示数字的全部转化为数字</li> <li>-l 仅列出在Listen(监听)的服务状态</li> <li>-p 显示建立相关链接的程序名</li></ul> <h2 id="_2-查看和终止进程"><a href="#_2-查看和终止进程" class="header-anchor">#</a> 2.查看和终止进程</h2> <ol><li><code>ps</code> 查看进程，找到进程 pid</li></ol> <div class="language-shell script line-numbers-mode"><pre class="language-shell"><code><span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> node
+<span class="token comment"># 查看所有进程里 CMD 是 node 的进程信息</span>
+
+<span class="token function">ps</span> -aux <span class="token operator">|</span> <span class="token function">grep</span> node
+<span class="token comment"># -aux 显示所有包含其他使用者的进程</span>
+<span class="token comment"># ps 命令用于查看当前正在运行的进程</span>
+<span class="token comment"># grep 搜索</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ol start="2"><li><code>kill</code> 终止进程，通过 pid</li></ol> <div class="language-shell script line-numbers-mode"><pre class="language-shell"><code><span class="token function">kill</span> -9 <span class="token punctuation">[</span>pid<span class="token punctuation">]</span>
+<span class="token comment"># -9 表示强制停止</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="_3-查看日志"><a href="#_3-查看日志" class="header-anchor">#</a> 3.查看日志</h2> <div class="language-shell script line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 查询最后100行日志</span>
+<span class="token function">tail</span> -n <span class="token number">100</span> info.log
+
+<span class="token comment"># 查询从100行之后的所有日志</span>
+<span class="token function">tail</span> -n +100 info.log
+
+<span class="token comment"># 查询日志文件中的头10行日志;</span>
+<span class="token function">head</span> -n <span class="token number">10</span> info.log
+
+<span class="token comment"># 查询日志文件除了最后10行的其他所有日志;</span>
+<span class="token function">head</span> -n -10 info.log
+
+<span class="token comment"># 获取关键字的行号</span>
+<span class="token comment"># -n 显示行号</span>
+<span class="token function">cat</span> -n test.log <span class="token operator">|</span><span class="token function">grep</span> <span class="token string">&quot;关键字&quot;</span>
+
+<span class="token comment"># 查询超多日志</span>
+<span class="token comment"># 1. 使用 more 和 less 命令，分页打印，然后空格翻页</span>
+<span class="token function">cat</span> -n info.log <span class="token operator">|</span><span class="token function">grep</span> <span class="token string">&quot;_id&quot;</span> <span class="token operator">|</span><span class="token function">more</span>
+<span class="token comment"># 2. 使用 &gt; xxx.txt 把输出的内容导入文件，然后拉下文件分析</span>
+<span class="token function">cat</span> -n info.log <span class="token operator">|</span><span class="token function">grep</span> <span class="token string">&quot;_id&quot;</span> <span class="token operator">&gt;</span>xxx.txt
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h2 id="_4-查看内存占用"><a href="#_4-查看内存占用" class="header-anchor">#</a> 4.查看内存占用</h2> <div class="language-shell script line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 查看占用内存最大的10个进程</span>
+<span class="token function">ps</span> -aux <span class="token operator">|</span> <span class="token function">sort</span> -k4nr <span class="token operator">|</span> <span class="token function">head</span> -n <span class="token number">10</span>
+
+<span class="token comment"># 查看内存占用最大的进程</span>
+<span class="token function">ps</span> aux<span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">&quot;USER&quot;</span> <span class="token operator">|</span><span class="token function">sort</span> -n -r -k <span class="token number">4</span> <span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'NR==1{ print <span class="token variable">$0</span>}'</span>
+
+<span class="token comment"># 找到目标进程后，可以通过下面方式 kill</span>
+<span class="token function">kill</span> -9 <span class="token variable"><span class="token variable">$(</span><span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">grep</span> 进程名 <span class="token operator">|</span><span class="token function">grep</span> -v <span class="token function">grep</span><span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print <span class="token variable">$2</span>}'</span><span class="token variable">)</span></span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_5-查看文件大小"><a href="#_5-查看文件大小" class="header-anchor">#</a> 5.查看文件大小</h2> <ol><li>ls 方案</li></ol> <div class="language-shell script line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 列出当前目录下所有文件的大小，以及所有文件大小的统计总和。文件夹会显示 4k</span>
+<span class="token function">ls</span>  -lht
+<span class="token comment"># total 64K</span>
+<span class="token comment"># drwxr-xr-x  3 root root 4.0K Jun 16 10:20 _back202006161020</span>
+<span class="token comment"># drwxr-xr-x 10 root root 4.0K Jun 16 09:07 task</span>
+<span class="token comment"># drwxr-xr-x  7 root root 4.0K Jun 15 22:58 blog</span>
+<span class="token comment"># drwxr-xr-x  5 root root 4.0K Jun  4 10:50 deploy</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ol start="2"><li>du 方案</li></ol> <div class="language-shell script line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 列出当前文件以及文件夹的大小</span>
+<span class="token function">du</span> -sh *
+<span class="token comment"># 24M     blog</span>
+<span class="token comment"># 930M    back</span>
+<span class="token comment"># 1.7M    deploy</span>
+<span class="token comment"># 334M    task</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>列出某个目录下文件大小的总和: <code>du -sh /data</code></p> <ol start="3"><li>查看单个文件/目录大小</li></ol> <ul><li><code>du -sh foo.sh</code></li> <li><code>ls -lh foo.sh</code></li></ul> <h2 id="_6-拆分-log-文件"><a href="#_6-拆分-log-文件" class="header-anchor">#</a> 6.拆分 log 文件</h2> <ol><li>指定拆分后文件行数</li></ol> <div class="language-shell script line-numbers-mode"><pre class="language-shell"><code><span class="token function">split</span> -l <span class="token number">300</span> large_file.txt new_file_prefix
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="2"><li>指定拆分后文件大小</li></ol> <div class="language-shell script line-numbers-mode"><pre class="language-shell"><code> <span class="token function">split</span> -b 10m server.log new_file_prefix
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="3"><li>合并文件</li></ol> <div class="language-shell script line-numbers-mode"><pre class="language-shell"><code><span class="token function">cat</span> small_files* <span class="token operator">&gt;</span> large_file
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h4> <ul><li><a href="https://www.cnblogs.com/peida/archive/2012/12/19/2824418.html" target="_blank" rel="noopener noreferrer">每天一个linux命令（41）：ps命令<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/sbtmbj2010/article/details/45097747" target="_blank" rel="noopener noreferrer">解决linux服务器内存占用过大问题<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.cnblogs.com/ming-blogs/p/11101423.html" target="_blank" rel="noopener noreferrer">Linux 查询端口被占用命令<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">1/27/2021, 10:38:09 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web/env/docker-error.html" class="prev">
+        docker - 常见报错
+      </a></span> <span class="next"><a href="/web/env/linux-dns.html">
+        linux - 修改DNS
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.7e3f72b7.js" defer></script><script src="/assets/js/2.30ada3ab.js" defer></script><script src="/assets/js/30.397a4535.js" defer></script>
+<a style="text-align: center;display: block" href="https://beian.miit.gov.cn">蜀ICP备18030457号-1</a>
+</body>
+<script type="text/javascript" async
+        src="//s5.cnzz.com/z_stat.php?id=1275911745&web_id=1275911745&show=none"></script>
+<script>
+(function () {
+  var bp = document.createElement('script');
+  // var curProtocol = window.location.protocol.split(':')[0];
+  // if (curProtocol === 'https') {
+  //   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  // }
+  // else {
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  // }
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</html>
