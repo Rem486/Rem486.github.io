@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>docker - 安装 | 从零开始的故事</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="前端博客,前端知识,前端备忘录,程序员笔记,css,html,javascript,git,linux">
+  <meta name="baidu-site-verification" content="utzmmiwMvm"/>
+  <link rel="icon" href="/img/logo.ico">
+  <meta name="description" content="linux下怎么安装docker">
+    <meta property="article:published_time" content="2021-04-23T00:00:00.000Z">
+    <meta property="article:modified_time" content="2021-04-23T07:07:49.000Z">
+    <meta property="og:site_name" content="从零开始的故事">
+    <meta property="og:title" content="docker - 安装">
+    <meta property="og:description" content="linux下怎么安装docker">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/server/env/docker-install.html">
+    <meta name="twitter:title" content="docker - 安装">
+    <meta name="twitter:description" content="linux下怎么安装docker">
+    <meta name="twitter:url" content="/server/env/docker-install.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="docker安装, linux安装docker, 怎么启动docker">
+    <meta property="article:tag" content="docker安装">
+  <link rel="preload" href="/assets/css/0.styles.d331a4a6.css" as="style"><link rel="preload" href="/assets/js/app.b19604f9.js" as="script"><link rel="preload" href="/assets/js/2.c66a9939.js" as="script"><link rel="preload" href="/assets/js/29.de45a9bc.js" as="script"><link rel="prefetch" href="/assets/js/10.7e02a48d.js"><link rel="prefetch" href="/assets/js/11.7cbdb207.js"><link rel="prefetch" href="/assets/js/12.86835fd7.js"><link rel="prefetch" href="/assets/js/13.c1ed122e.js"><link rel="prefetch" href="/assets/js/14.9316c023.js"><link rel="prefetch" href="/assets/js/15.f453145e.js"><link rel="prefetch" href="/assets/js/16.05ee4913.js"><link rel="prefetch" href="/assets/js/17.e2abb739.js"><link rel="prefetch" href="/assets/js/18.81de7682.js"><link rel="prefetch" href="/assets/js/19.dbb9c1a1.js"><link rel="prefetch" href="/assets/js/20.6141ad28.js"><link rel="prefetch" href="/assets/js/21.0b95430a.js"><link rel="prefetch" href="/assets/js/22.4fc7cd63.js"><link rel="prefetch" href="/assets/js/23.9b8ef39b.js"><link rel="prefetch" href="/assets/js/24.8cfbea61.js"><link rel="prefetch" href="/assets/js/25.52a57bda.js"><link rel="prefetch" href="/assets/js/26.9c148a96.js"><link rel="prefetch" href="/assets/js/27.f0f78817.js"><link rel="prefetch" href="/assets/js/28.c999415b.js"><link rel="prefetch" href="/assets/js/3.8a98a894.js"><link rel="prefetch" href="/assets/js/30.caa023a4.js"><link rel="prefetch" href="/assets/js/31.80275c17.js"><link rel="prefetch" href="/assets/js/32.09f2b25e.js"><link rel="prefetch" href="/assets/js/33.0049b819.js"><link rel="prefetch" href="/assets/js/34.26478515.js"><link rel="prefetch" href="/assets/js/35.38b0fba4.js"><link rel="prefetch" href="/assets/js/36.e6ff6794.js"><link rel="prefetch" href="/assets/js/37.a0da2105.js"><link rel="prefetch" href="/assets/js/38.cc16fcd3.js"><link rel="prefetch" href="/assets/js/39.287782ce.js"><link rel="prefetch" href="/assets/js/4.d2a58c11.js"><link rel="prefetch" href="/assets/js/40.2e4839c6.js"><link rel="prefetch" href="/assets/js/41.b3405a00.js"><link rel="prefetch" href="/assets/js/42.89989394.js"><link rel="prefetch" href="/assets/js/43.14d8b150.js"><link rel="prefetch" href="/assets/js/44.8f9f3add.js"><link rel="prefetch" href="/assets/js/45.c7f31e0f.js"><link rel="prefetch" href="/assets/js/46.eb46082f.js"><link rel="prefetch" href="/assets/js/47.5d4c79a7.js"><link rel="prefetch" href="/assets/js/48.5a03194e.js"><link rel="prefetch" href="/assets/js/49.54aec44b.js"><link rel="prefetch" href="/assets/js/5.bbfe7e5f.js"><link rel="prefetch" href="/assets/js/50.8309cc85.js"><link rel="prefetch" href="/assets/js/51.958a1b5f.js"><link rel="prefetch" href="/assets/js/52.9277dc98.js"><link rel="prefetch" href="/assets/js/53.6cbee41f.js"><link rel="prefetch" href="/assets/js/54.5d4a7359.js"><link rel="prefetch" href="/assets/js/55.bbe0486d.js"><link rel="prefetch" href="/assets/js/56.f0c980b6.js"><link rel="prefetch" href="/assets/js/57.44c1908f.js"><link rel="prefetch" href="/assets/js/58.b90c1833.js"><link rel="prefetch" href="/assets/js/59.f640fa53.js"><link rel="prefetch" href="/assets/js/6.a6ef3a2b.js"><link rel="prefetch" href="/assets/js/60.eb376134.js"><link rel="prefetch" href="/assets/js/61.57c31783.js"><link rel="prefetch" href="/assets/js/62.e04d2b20.js"><link rel="prefetch" href="/assets/js/63.d46981c0.js"><link rel="prefetch" href="/assets/js/64.a106f8f3.js"><link rel="prefetch" href="/assets/js/65.1eec5fd7.js"><link rel="prefetch" href="/assets/js/66.c4d79fb5.js"><link rel="prefetch" href="/assets/js/67.c138431c.js"><link rel="prefetch" href="/assets/js/68.2e428f70.js"><link rel="prefetch" href="/assets/js/69.6c4916d3.js"><link rel="prefetch" href="/assets/js/7.4c9e8a9f.js"><link rel="prefetch" href="/assets/js/70.5cf97fc6.js"><link rel="prefetch" href="/assets/js/71.a5943b48.js"><link rel="prefetch" href="/assets/js/72.0ca302bb.js"><link rel="prefetch" href="/assets/js/73.d0944b6d.js"><link rel="prefetch" href="/assets/js/74.9f30501b.js"><link rel="prefetch" href="/assets/js/75.dbff395d.js"><link rel="prefetch" href="/assets/js/76.13e0e44b.js"><link rel="prefetch" href="/assets/js/77.a845d4b3.js"><link rel="prefetch" href="/assets/js/78.59511dc3.js"><link rel="prefetch" href="/assets/js/79.36cdf7c0.js"><link rel="prefetch" href="/assets/js/8.01ef4cbe.js"><link rel="prefetch" href="/assets/js/80.18e38cd5.js"><link rel="prefetch" href="/assets/js/81.24c1b7c4.js"><link rel="prefetch" href="/assets/js/82.89cbebb1.js"><link rel="prefetch" href="/assets/js/83.4932bc6c.js"><link rel="prefetch" href="/assets/js/84.01632628.js"><link rel="prefetch" href="/assets/js/85.85135700.js"><link rel="prefetch" href="/assets/js/86.8c04d0b3.js"><link rel="prefetch" href="/assets/js/87.5426ccc2.js"><link rel="prefetch" href="/assets/js/9.64bcef9e.js">
+  <link rel="stylesheet" href="/assets/css/0.styles.d331a4a6.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">从零开始的故事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link router-link-active">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link">
+  日常记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link router-link-active">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link">
+  日常记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/server/" aria-current="page" class="sidebar-link">我的服务器</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>环境</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/server/env/docker-install.html" aria-current="page" class="active sidebar-link">docker - 安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/server/env/docker-install.html#自动安装" class="sidebar-link">自动安装</a></li><li class="sidebar-sub-header"><a href="/server/env/docker-install.html#手动安装" class="sidebar-link">手动安装</a></li></ul></li><li><a href="/server/env/docker-error.html" class="sidebar-link">docker - 常见报错</a></li><li><a href="/server/env/linux-command.html" class="sidebar-link">linux - 常用命令</a></li><li><a href="/server/env/linux-dns.html" class="sidebar-link">linux - 修改DNS</a></li><li><a href="/server/env/linux-systemctl.html" class="sidebar-link">linux - systemctl详细理解及常用命令</a></li><li><a href="/server/env/node-version-control.html" class="sidebar-link">管理nodejs版本</a></li><li><a href="/server/env/ssh-password-free-login.html" class="sidebar-link">ssh - 免密登录及设置多个key</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/server/database/mongodb-error.html" class="sidebar-link">mongodb - 常见错误</a></li><li><a href="/server/database/mongodb-memo.html" class="sidebar-link">mongodb - 备忘录</a></li><li><a href="/server/database/mysql-start-stop.html" class="sidebar-link">mysql - 启动和关闭</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="docker-安装"><a href="#docker-安装" class="header-anchor">#</a> docker - 安装</h1> <h2 id="自动安装"><a href="#自动安装" class="header-anchor">#</a> 自动安装</h2> <blockquote><p>参考在 centos 上安装 docker 的<a href="https://docs.docker.com/install/linux/docker-ce/centos/" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p>使用官方安装脚本自动安装</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">curl</span> -fsSL https://get.docker.com <span class="token operator">|</span> <span class="token function">bash</span> -s docker --mirror Aliyun
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>或使用国内 daocloud 一键安装命令</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">curl</span> -sSL https://get.daocloud.io/docker <span class="token operator">|</span> <span class="token function">sh</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="手动安装"><a href="#手动安装" class="header-anchor">#</a> 手动安装</h2> <p><strong>卸载旧版本</strong>
+较旧的 Docker 版本称为 docker 或 docker-engine 。如果已安装这些程序，请卸载它们以及相关的依赖项。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">sudo</span> yum remove docker <span class="token punctuation">\</span>
+                docker-client <span class="token punctuation">\</span>
+                docker-client-latest <span class="token punctuation">\</span>
+                docker-common <span class="token punctuation">\</span>
+                docker-latest <span class="token punctuation">\</span>
+                docker-latest-logrotate <span class="token punctuation">\</span>
+                docker-logrotate <span class="token punctuation">\</span>
+                docker-engine
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>安装依赖</strong>
+yum-utils 提供了 yum-config-manager 管理 yum 配置， device mapper 存储驱动程序需要 device-mapper-persistent-data 和 lvm2</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>yum <span class="token function">install</span> -y yum-utils device-mapper-persistent-data lvm2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>设置稳定的仓库</strong></p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code> 安装 docker 官方的镜像源
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+<span class="token comment"># 如果在国内，安装阿里云的镜像</span>
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>安装 docker</strong></p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 安装 docker</span>
+yum <span class="token function">install</span> -y docker-ce
+
+<span class="token comment"># 安装指定版本号的 docker （2021.01）</span>
+yum <span class="token function">install</span> -y docker-ce-20.10.2
+
+<span class="token comment"># 查看存储库中可用的版本，按版本号（从高到低）对结果进行排序</span>
+yum list docker-ce --showduplicates <span class="token operator">|</span> <span class="token function">sort</span> -r
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>查看 docker 信息</strong></p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>docker --version
+<span class="token comment"># Docker version 20.10.2, build 2291f61</span>
+
+<span class="token comment"># 查看更详细的版本号信息</span>
+docker version
+
+<span class="token comment"># 查看docker的详细配置信息</span>
+docker info
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>启动 docker</strong></p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 开机自启动</span>
+systemctl <span class="token builtin class-name">enable</span> docker
+<span class="token comment"># Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.</span>
+
+systemctl start docker
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><a href="https://blog.csdn.net/skh2015java/article/details/94012643" target="_blank" rel="noopener noreferrer">systemctl<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>卸载 docker</strong>
+删除安装包：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>yum remove docker-ce
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>删除镜像、容器、配置文件等内容：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">rm</span> -rf /var/lib/docker
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/23/2021, 3:07:49 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/server/" class="prev router-link-active">
+        我的服务器
+      </a></span> <span class="next"><a href="/server/env/docker-error.html">
+        docker - 常见报错
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.b19604f9.js" defer></script><script src="/assets/js/2.c66a9939.js" defer></script><script src="/assets/js/29.de45a9bc.js" defer></script>
+<a style="text-align: center;display: block" href="https://beian.miit.gov.cn">蜀ICP备18030457号-1</a>
+</body>
+<script type="text/javascript" async
+        src="//s5.cnzz.com/z_stat.php?id=1275911745&web_id=1275911745&show=none"></script>
+<script>
+(function () {
+  var bp = document.createElement('script');
+  // var curProtocol = window.location.protocol.split(':')[0];
+  // if (curProtocol === 'https') {
+  //   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  // }
+  // else {
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  // }
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</html>

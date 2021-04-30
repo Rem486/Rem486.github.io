@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>mongodb-逻辑操作符$or,$and,$not,$nor | 从零开始的故事</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="前端博客,前端知识,前端备忘录,程序员笔记,css,html,javascript,git,linux">
+  <meta name="baidu-site-verification" content="utzmmiwMvm"/>
+  <link rel="icon" href="/img/logo.ico">
+  <meta name="description" content="mongodb逻辑操作符$or,$and,$not,$nor的使用说明，更好的设置查询表达式">
+    <meta property="article:published_time" content="2020-05-20T00:00:00.000Z">
+    <meta property="article:modified_time" content="2021-04-23T01:43:10.000Z">
+    <meta property="og:site_name" content="从零开始的故事">
+    <meta property="og:title" content="mongodb-逻辑操作符$or,$and,$not,$nor">
+    <meta property="og:description" content="mongodb逻辑操作符$or,$and,$not,$nor的使用说明，更好的设置查询表达式">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/server/database/mongodb-logical-operator.html">
+    <meta name="twitter:title" content="mongodb-逻辑操作符$or,$and,$not,$nor">
+    <meta name="twitter:description" content="mongodb逻辑操作符$or,$and,$not,$nor的使用说明，更好的设置查询表达式">
+    <meta name="twitter:url" content="/server/database/mongodb-logical-operator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="mongodb, 逻辑操作符">
+    <meta property="article:tag" content="mongodb">
+  <link rel="preload" href="/assets/css/0.styles.d331a4a6.css" as="style"><link rel="preload" href="/assets/js/app.b19604f9.js" as="script"><link rel="preload" href="/assets/js/2.c66a9939.js" as="script"><link rel="preload" href="/assets/js/23.9b8ef39b.js" as="script"><link rel="prefetch" href="/assets/js/10.7e02a48d.js"><link rel="prefetch" href="/assets/js/11.7cbdb207.js"><link rel="prefetch" href="/assets/js/12.86835fd7.js"><link rel="prefetch" href="/assets/js/13.c1ed122e.js"><link rel="prefetch" href="/assets/js/14.9316c023.js"><link rel="prefetch" href="/assets/js/15.f453145e.js"><link rel="prefetch" href="/assets/js/16.05ee4913.js"><link rel="prefetch" href="/assets/js/17.e2abb739.js"><link rel="prefetch" href="/assets/js/18.81de7682.js"><link rel="prefetch" href="/assets/js/19.dbb9c1a1.js"><link rel="prefetch" href="/assets/js/20.6141ad28.js"><link rel="prefetch" href="/assets/js/21.0b95430a.js"><link rel="prefetch" href="/assets/js/22.4fc7cd63.js"><link rel="prefetch" href="/assets/js/24.8cfbea61.js"><link rel="prefetch" href="/assets/js/25.52a57bda.js"><link rel="prefetch" href="/assets/js/26.9c148a96.js"><link rel="prefetch" href="/assets/js/27.f0f78817.js"><link rel="prefetch" href="/assets/js/28.c999415b.js"><link rel="prefetch" href="/assets/js/29.de45a9bc.js"><link rel="prefetch" href="/assets/js/3.8a98a894.js"><link rel="prefetch" href="/assets/js/30.caa023a4.js"><link rel="prefetch" href="/assets/js/31.80275c17.js"><link rel="prefetch" href="/assets/js/32.09f2b25e.js"><link rel="prefetch" href="/assets/js/33.0049b819.js"><link rel="prefetch" href="/assets/js/34.26478515.js"><link rel="prefetch" href="/assets/js/35.38b0fba4.js"><link rel="prefetch" href="/assets/js/36.e6ff6794.js"><link rel="prefetch" href="/assets/js/37.a0da2105.js"><link rel="prefetch" href="/assets/js/38.cc16fcd3.js"><link rel="prefetch" href="/assets/js/39.287782ce.js"><link rel="prefetch" href="/assets/js/4.d2a58c11.js"><link rel="prefetch" href="/assets/js/40.2e4839c6.js"><link rel="prefetch" href="/assets/js/41.b3405a00.js"><link rel="prefetch" href="/assets/js/42.89989394.js"><link rel="prefetch" href="/assets/js/43.14d8b150.js"><link rel="prefetch" href="/assets/js/44.8f9f3add.js"><link rel="prefetch" href="/assets/js/45.c7f31e0f.js"><link rel="prefetch" href="/assets/js/46.eb46082f.js"><link rel="prefetch" href="/assets/js/47.5d4c79a7.js"><link rel="prefetch" href="/assets/js/48.5a03194e.js"><link rel="prefetch" href="/assets/js/49.54aec44b.js"><link rel="prefetch" href="/assets/js/5.bbfe7e5f.js"><link rel="prefetch" href="/assets/js/50.8309cc85.js"><link rel="prefetch" href="/assets/js/51.958a1b5f.js"><link rel="prefetch" href="/assets/js/52.9277dc98.js"><link rel="prefetch" href="/assets/js/53.6cbee41f.js"><link rel="prefetch" href="/assets/js/54.5d4a7359.js"><link rel="prefetch" href="/assets/js/55.bbe0486d.js"><link rel="prefetch" href="/assets/js/56.f0c980b6.js"><link rel="prefetch" href="/assets/js/57.44c1908f.js"><link rel="prefetch" href="/assets/js/58.b90c1833.js"><link rel="prefetch" href="/assets/js/59.f640fa53.js"><link rel="prefetch" href="/assets/js/6.a6ef3a2b.js"><link rel="prefetch" href="/assets/js/60.eb376134.js"><link rel="prefetch" href="/assets/js/61.57c31783.js"><link rel="prefetch" href="/assets/js/62.e04d2b20.js"><link rel="prefetch" href="/assets/js/63.d46981c0.js"><link rel="prefetch" href="/assets/js/64.a106f8f3.js"><link rel="prefetch" href="/assets/js/65.1eec5fd7.js"><link rel="prefetch" href="/assets/js/66.c4d79fb5.js"><link rel="prefetch" href="/assets/js/67.c138431c.js"><link rel="prefetch" href="/assets/js/68.2e428f70.js"><link rel="prefetch" href="/assets/js/69.6c4916d3.js"><link rel="prefetch" href="/assets/js/7.4c9e8a9f.js"><link rel="prefetch" href="/assets/js/70.5cf97fc6.js"><link rel="prefetch" href="/assets/js/71.a5943b48.js"><link rel="prefetch" href="/assets/js/72.0ca302bb.js"><link rel="prefetch" href="/assets/js/73.d0944b6d.js"><link rel="prefetch" href="/assets/js/74.9f30501b.js"><link rel="prefetch" href="/assets/js/75.dbff395d.js"><link rel="prefetch" href="/assets/js/76.13e0e44b.js"><link rel="prefetch" href="/assets/js/77.a845d4b3.js"><link rel="prefetch" href="/assets/js/78.59511dc3.js"><link rel="prefetch" href="/assets/js/79.36cdf7c0.js"><link rel="prefetch" href="/assets/js/8.01ef4cbe.js"><link rel="prefetch" href="/assets/js/80.18e38cd5.js"><link rel="prefetch" href="/assets/js/81.24c1b7c4.js"><link rel="prefetch" href="/assets/js/82.89cbebb1.js"><link rel="prefetch" href="/assets/js/83.4932bc6c.js"><link rel="prefetch" href="/assets/js/84.01632628.js"><link rel="prefetch" href="/assets/js/85.85135700.js"><link rel="prefetch" href="/assets/js/86.8c04d0b3.js"><link rel="prefetch" href="/assets/js/87.5426ccc2.js"><link rel="prefetch" href="/assets/js/9.64bcef9e.js">
+  <link rel="stylesheet" href="/assets/css/0.styles.d331a4a6.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">从零开始的故事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link router-link-active">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link">
+  日常记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link router-link-active">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link">
+  日常记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/server/" aria-current="page" class="sidebar-link">我的服务器</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>环境</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/server/env/docker-install.html" class="sidebar-link">docker - 安装</a></li><li><a href="/server/env/docker-error.html" class="sidebar-link">docker - 常见报错</a></li><li><a href="/server/env/linux-command.html" class="sidebar-link">linux - 常用命令</a></li><li><a href="/server/env/linux-dns.html" class="sidebar-link">linux - 修改DNS</a></li><li><a href="/server/env/linux-systemctl.html" class="sidebar-link">linux - systemctl详细理解及常用命令</a></li><li><a href="/server/env/node-version-control.html" class="sidebar-link">管理nodejs版本</a></li><li><a href="/server/env/ssh-password-free-login.html" class="sidebar-link">ssh - 免密登录及设置多个key</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/server/database/mongodb-error.html" class="sidebar-link">mongodb - 常见错误</a></li><li><a href="/server/database/mongodb-memo.html" class="sidebar-link">mongodb - 备忘录</a></li><li><a href="/server/database/mysql-start-stop.html" class="sidebar-link">mysql - 启动和关闭</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mongodb-逻辑操作符-or-and-not-nor"><a href="#mongodb-逻辑操作符-or-and-not-nor" class="header-anchor">#</a> mongodb-逻辑操作符$or,$and,$not,$nor</h1> <p>创建时间：2020-05-20</p> <p>介绍 mongodb 里面的四种逻辑操作符</p> <h2 id="or-或"><a href="#or-或" class="header-anchor">#</a> $or 或</h2> <p>$or是一个逻辑or操作符操作在一个数据或者多个表达式并且需要选择至少一个满足条件的表达式，$or有至少以下表达式：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{ $or: [ { &lt;expression1&gt; }, { &lt;expression2&gt; }, ... , { &lt;expressionN&gt; } ] }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>考虑下面的例子：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>db.inventory.find( { $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] } )
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>上面的例子会查询集合inventory中所有字段quantity小于20或者price等于10的所有文档。</p> <p>使用$or条件评估条款，MongoDB会扫描整个文档集合，如果所有的条件支持索引，MongoDB进行索引扫描，因此MongoDB使用索引执行$or表达式，$or中的所有表达式必须支持索引，否则的话MongoDB就会扫描整个集合。</p> <p>当使用$or查询并且使用索引时，每个$or的条件表达式都可以使用自己的索引，考虑下面的查询：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>db.inventory.find( { $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] } )
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>支持上面的查询你不需要创建一个符合索引，而是在字段quantity上创建一个索引，在price上创建一个索引。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>db.inventory.createIndex( { quantity: 1 } )
+db.inventory.createIndex( { price: 1 } )
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>$or和sort()操作
+当使用$or执行sort()查询时，MongoDB可以使用支持$or查询条件的索引。之前的版本不支持索引。</p> <p>$or与$in</p> <p>使用$or操作比较字段的值是否等于某个值时可以使用$in替换$or操作；例如查询集合inventory中字段quantity的值等于20或者50的所有文档，使用$in操作：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>db.inventory.find ( { quantity: { $in: [20, 50] } } )
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="and"><a href="#and" class="header-anchor">#</a> $and</h2> <p>语法：<code>{ $and: [ { &lt;expression1&gt; }, { &lt;expression2&gt; } , ... , {&lt;expressionN&gt; } ] }</code></p> <p>$and执行一个逻辑and操作在一个或者多个表达式上，并且查询数组中指定的所有表达式指定的文档document,$and使用短路求值，如果第一个表达式的结果是false，MongoDB将不会执行剩余的表达式；</p> <p>例如：and查询指定同一个字段的多个查询条件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>db.inventory.find( { $and: [ { price: { $ne: 1.99 } }, { price: { $exists: true } } ] } )
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这个查询会选择集合inventory中的所有文档，条件是price不等于1.99并且price字段存在；
+以上查询还可以使用隐式AND操作，如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>db.inventory.find( { price: { $ne: 1.99, $exists: true } } )
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>AND查询使用多个表达式指定相同的操作：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>db.inventory.find( {
+    $and : [
+        { $or : [ { price : 0.99 }, { price : 1.99 } ] },
+        { $or : [ { sale : true }, { qty : { $lt : 20 } } ] }
+    ]
+} )
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>以上字段将会查询price字段值等于0.99或1.99并且sale字段值为true或者qty小于20的所有文档；
+使用隐式AND操作无法构建此查询，因为它不止一次使用$or操作；</p> <h2 id="not"><a href="#not" class="header-anchor">#</a> $not</h2> <p>语法： <code>{ field: { $not: { &lt;operator-expression&gt; } } }</code></p> <p>$not执行一个逻辑not操作在指定的表达式并查询到不匹配表达式的文档，这包含不包括字段的文档；</p> <p>考虑如下操作：
+db.inventory.find( { price: { $not: { $gt: 1.99 } } } )
+此查询将会查询inventory集合中的文档，条件如下：price字段小于等于1.99或者price不存在。
+{ $not: { $gt: 1.99 } } 不同于$lte操作，{ $lte: 1.99 }操作只会返回price字段存在并且小于等于1.99的字段。</p> <p>记住$not操作符只会影响其他操作符不能独立检查字段和文档，因此使用$not做逻辑析取和$ne操作测试字段内容；</p> <p>使用$not操作时考虑如下操作：</p> <p>操作$not操作符和其它操作符一致但是会产生一些意想不到的结果，比如数组之类的数据类型；</p> <p>$not操作符不支持$regex正则表达式操作，使用//或者你的驱动接口代替，使用语言的正则表达式功能创建正则表达式对象；</p> <p>考虑下面的例子使用模式匹配//:</p> <p>db.inventory.find( { item: { $not: /^p.*/ } } )</p> <p>此查询将会查询inventory集合中item字段不是以p开头的所有文档；</p> <h2 id="nor"><a href="#nor" class="header-anchor">#</a> $nor</h2> <p><code>{ $nor: [ { &lt;expression1&gt; }, { &lt;expression2&gt; }, ... { &lt;expressionN&gt; } ] }</code>
+考虑如下操作：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>db.inventory.find( { $nor: [ { price: 1.99 }, { sale: true } ]  } )
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>查询返回所有的文档，条件是：</p> <p>包含字段price值不等于1.99，包含字段sale值不等于true,或者包含字段price值不等于1.99，不包含字段sale；或者不包含字段price,包含字段sale值不等于true;或者不包含字段price，不包含字段sale;</p> <p>$nor额外比较</p> <p>考虑如下操作：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>db.inventory.find( { $nor: [ { price: 1.99 }, { qty: { $lt: 20 } }, { sale: true } ] }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>inventory集合查询所有的文档，条件如下：
+字段price不等于1.99，字段qty不小于20，字段sale不等于true;查询的结果包含不存在的字段；</p> <h3 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h3> <ul><li><a href="https://blog.csdn.net/yaomingyang/article/details/75103480" target="_blank" rel="noopener noreferrer">MongoDB逻辑操作符$or, $and,$not,$nor<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/23/2021, 9:43:10 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.b19604f9.js" defer></script><script src="/assets/js/2.c66a9939.js" defer></script><script src="/assets/js/23.9b8ef39b.js" defer></script>
+<a style="text-align: center;display: block" href="https://beian.miit.gov.cn">蜀ICP备18030457号-1</a>
+</body>
+<script type="text/javascript" async
+        src="//s5.cnzz.com/z_stat.php?id=1275911745&web_id=1275911745&show=none"></script>
+<script>
+(function () {
+  var bp = document.createElement('script');
+  // var curProtocol = window.location.protocol.split(':')[0];
+  // if (curProtocol === 'https') {
+  //   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  // }
+  // else {
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  // }
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</html>
