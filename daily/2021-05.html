@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>2021-05 日常记录 | 从零开始的故事</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="前端博客,前端知识,前端备忘录,程序员笔记,css,html,javascript,git,linux">
+  <meta name="baidu-site-verification" content="utzmmiwMvm"/>
+  <link rel="icon" href="/img/logo.ico">
+  <meta name="description" content="vuex module 使用 rootState,label 标签会改变 event target">
+    <meta property="article:published_time" content="2021-05-17T00:00:00.000Z">
+    <meta property="article:modified_time" content="2021-05-26T02:45:07.000Z">
+    <meta property="og:site_name" content="从零开始的故事">
+    <meta property="og:title" content="2021-05 日常记录">
+    <meta property="og:description" content="vuex module 使用 rootState,label 标签会改变 event target">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/daily/2021-05.html">
+    <meta name="twitter:title" content="2021-05 日常记录">
+    <meta name="twitter:description" content="vuex module 使用 rootState,label 标签会改变 event target">
+    <meta name="twitter:url" content="/daily/2021-05.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="vuex module 怎么使用 rootState, label 标签会改变 event target">
+    <meta property="article:tag" content="vuex module 怎么使用 rootState">
+  <link rel="preload" href="/assets/css/0.styles.d331a4a6.css" as="style"><link rel="preload" href="/assets/js/app.4d8df6b1.js" as="script"><link rel="preload" href="/assets/js/2.c66a9939.js" as="script"><link rel="preload" href="/assets/js/15.978c8032.js" as="script"><link rel="prefetch" href="/assets/js/10.30ce6ebb.js"><link rel="prefetch" href="/assets/js/11.7cbdb207.js"><link rel="prefetch" href="/assets/js/12.807ca00f.js"><link rel="prefetch" href="/assets/js/13.27e036be.js"><link rel="prefetch" href="/assets/js/14.e298eef4.js"><link rel="prefetch" href="/assets/js/16.ce8efbea.js"><link rel="prefetch" href="/assets/js/17.ad5077af.js"><link rel="prefetch" href="/assets/js/18.265b1021.js"><link rel="prefetch" href="/assets/js/19.20e9a748.js"><link rel="prefetch" href="/assets/js/20.dc643f88.js"><link rel="prefetch" href="/assets/js/21.78b75371.js"><link rel="prefetch" href="/assets/js/22.0a6b9741.js"><link rel="prefetch" href="/assets/js/23.b490c22b.js"><link rel="prefetch" href="/assets/js/24.0e878239.js"><link rel="prefetch" href="/assets/js/25.240f5974.js"><link rel="prefetch" href="/assets/js/26.527cfbe1.js"><link rel="prefetch" href="/assets/js/27.1f40bd13.js"><link rel="prefetch" href="/assets/js/28.2255ddee.js"><link rel="prefetch" href="/assets/js/29.ba189d68.js"><link rel="prefetch" href="/assets/js/3.2bcd8468.js"><link rel="prefetch" href="/assets/js/30.65aef1be.js"><link rel="prefetch" href="/assets/js/31.88c114bc.js"><link rel="prefetch" href="/assets/js/32.235a29d6.js"><link rel="prefetch" href="/assets/js/33.6bfdd7e2.js"><link rel="prefetch" href="/assets/js/34.782ea088.js"><link rel="prefetch" href="/assets/js/35.928ab2a1.js"><link rel="prefetch" href="/assets/js/36.f3d75b19.js"><link rel="prefetch" href="/assets/js/37.b0bbb822.js"><link rel="prefetch" href="/assets/js/38.c24d09af.js"><link rel="prefetch" href="/assets/js/39.80b82972.js"><link rel="prefetch" href="/assets/js/4.d2a58c11.js"><link rel="prefetch" href="/assets/js/40.29ad8290.js"><link rel="prefetch" href="/assets/js/41.d3ca74d3.js"><link rel="prefetch" href="/assets/js/42.7856a88e.js"><link rel="prefetch" href="/assets/js/43.6952423d.js"><link rel="prefetch" href="/assets/js/44.b7d24cfc.js"><link rel="prefetch" href="/assets/js/45.804cfcdf.js"><link rel="prefetch" href="/assets/js/46.014a874c.js"><link rel="prefetch" href="/assets/js/47.d7eab85f.js"><link rel="prefetch" href="/assets/js/48.76dd9c46.js"><link rel="prefetch" href="/assets/js/49.da14d3be.js"><link rel="prefetch" href="/assets/js/5.bbfe7e5f.js"><link rel="prefetch" href="/assets/js/50.8f4a4920.js"><link rel="prefetch" href="/assets/js/51.8a7e9cad.js"><link rel="prefetch" href="/assets/js/52.bc78cd70.js"><link rel="prefetch" href="/assets/js/53.3d17141b.js"><link rel="prefetch" href="/assets/js/54.41d4f2e5.js"><link rel="prefetch" href="/assets/js/55.141f29bf.js"><link rel="prefetch" href="/assets/js/56.7bae4d14.js"><link rel="prefetch" href="/assets/js/57.7a65e405.js"><link rel="prefetch" href="/assets/js/58.1989f971.js"><link rel="prefetch" href="/assets/js/59.83556a93.js"><link rel="prefetch" href="/assets/js/6.a6ef3a2b.js"><link rel="prefetch" href="/assets/js/60.042125c9.js"><link rel="prefetch" href="/assets/js/61.9c4791aa.js"><link rel="prefetch" href="/assets/js/62.677fbf21.js"><link rel="prefetch" href="/assets/js/63.79d26999.js"><link rel="prefetch" href="/assets/js/64.bf4a26d2.js"><link rel="prefetch" href="/assets/js/65.a1f693a8.js"><link rel="prefetch" href="/assets/js/66.b57b8ed6.js"><link rel="prefetch" href="/assets/js/67.67a962ad.js"><link rel="prefetch" href="/assets/js/68.78511023.js"><link rel="prefetch" href="/assets/js/69.d4d1393b.js"><link rel="prefetch" href="/assets/js/7.4c9e8a9f.js"><link rel="prefetch" href="/assets/js/70.2bd809f1.js"><link rel="prefetch" href="/assets/js/71.f8277adf.js"><link rel="prefetch" href="/assets/js/72.dddef7b4.js"><link rel="prefetch" href="/assets/js/73.17b6e1a2.js"><link rel="prefetch" href="/assets/js/74.85599ec9.js"><link rel="prefetch" href="/assets/js/75.b451457c.js"><link rel="prefetch" href="/assets/js/76.c2f85434.js"><link rel="prefetch" href="/assets/js/77.cf167288.js"><link rel="prefetch" href="/assets/js/78.5eebc739.js"><link rel="prefetch" href="/assets/js/79.90c183b1.js"><link rel="prefetch" href="/assets/js/8.44ede4f7.js"><link rel="prefetch" href="/assets/js/80.4e278409.js"><link rel="prefetch" href="/assets/js/81.556c6dbf.js"><link rel="prefetch" href="/assets/js/82.e443f8b5.js"><link rel="prefetch" href="/assets/js/83.94060a0f.js"><link rel="prefetch" href="/assets/js/84.e54e0292.js"><link rel="prefetch" href="/assets/js/85.14e37021.js"><link rel="prefetch" href="/assets/js/86.b03f043c.js"><link rel="prefetch" href="/assets/js/87.06658066.js"><link rel="prefetch" href="/assets/js/88.c521472f.js"><link rel="prefetch" href="/assets/js/9.a9f36b86.js">
+  <link rel="stylesheet" href="/assets/css/0.styles.d331a4a6.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">从零开始的故事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link router-link-active">
+  日常记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link router-link-active">
+  日常记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/daily/" aria-current="page" class="sidebar-link">日常记录</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>葵花宝典</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/daily/2021-03.html" class="sidebar-link">2021-03 日常记录</a></li><li><a href="/daily/2021-04.html" class="sidebar-link">2021-04 日常记录</a></li><li><a href="/daily/2021-05.html" aria-current="page" class="active sidebar-link">2021-05 日常记录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/daily/2021-05.html#vuex-module-使用-rootstate" class="sidebar-link">vuex module 使用 rootState</a></li><li class="sidebar-sub-header"><a href="/daily/2021-05.html#label-标签会改变-event-target" class="sidebar-link">label 标签会改变 event target</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_2021-05-问题记录"><a href="#_2021-05-问题记录" class="header-anchor">#</a> 2021-05 问题记录</h1> <p><strong>2021/5/17 周一</strong></p> <h2 id="vuex-module-使用-rootstate"><a href="#vuex-module-使用-rootstate" class="header-anchor">#</a> vuex module 使用 rootState</h2> <p>在 vuex module 里面使用根节点状态的方法：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> moduleA <span class="token operator">=</span> <span class="token punctuation">{</span>
+  actions<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">add</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> state<span class="token punctuation">,</span> commit<span class="token punctuation">,</span> rootState <span class="token punctuation">}</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'ADD'</span><span class="token punctuation">,</span> state<span class="token punctuation">.</span>count <span class="token operator">+</span> rootState<span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  getter<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">total</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> getters<span class="token punctuation">,</span> rootState</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> state<span class="token punctuation">.</span>count <span class="token operator">+</span> rootState<span class="token punctuation">.</span>count<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><hr> <p><strong>2021/5/18 周二</strong></p> <h2 id="label-标签会改变-event-target"><a href="#label-标签会改变-event-target" class="header-anchor">#</a> label 标签会改变 event target</h2> <blockquote><p>HTML <label> 元素（标签）表示用户界面中某个元素的说明。
+不要在 label 元素内部放置可交互的元素，比如 anchors 或 buttons。这样做会让用户更难激活/触发与 label 相关联的表单输入元素。</label></p></blockquote> <p>一般是使用 label 标签可以和 input 相关联，来扩大 input 的点击区域。这也就导致了，其内部的点击事件都会被关联到 input 上面去，event target 都是 input。导致一些判断出错。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/26/2021, 10:45:07 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/daily/2021-04.html" class="prev">
+        2021-04 日常记录
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.4d8df6b1.js" defer></script><script src="/assets/js/2.c66a9939.js" defer></script><script src="/assets/js/15.978c8032.js" defer></script>
+<a style="text-align: center;display: block" href="https://beian.miit.gov.cn">蜀ICP备18030457号-1</a>
+</body>
+<script type="text/javascript" async
+        src="//s5.cnzz.com/z_stat.php?id=1275911745&web_id=1275911745&show=none"></script>
+<script>
+(function () {
+  var bp = document.createElement('script');
+  // var curProtocol = window.location.protocol.split(':')[0];
+  // if (curProtocol === 'https') {
+  //   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  // }
+  // else {
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  // }
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</html>
