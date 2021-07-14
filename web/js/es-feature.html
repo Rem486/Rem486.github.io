@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ECMAScript - 特性表 | 从零开始的故事</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="前端博客,前端知识,前端备忘录,程序员笔记,css,html,javascript,git,linux">
+  <meta name="baidu-site-verification" content="utzmmiwMvm"/>
+  <link rel="icon" href="/img/logo.ico">
+  <meta name="description" content="ECMAScript 特性速查表，">
+    <meta property="article:published_time" content="2021-04-13T00:00:00.000Z">
+    <meta property="article:modified_time" content="2021-07-14T03:23:21.000Z">
+    <meta property="og:site_name" content="从零开始的故事">
+    <meta property="og:title" content="ECMAScript - 特性表">
+    <meta property="og:description" content="ECMAScript 特性速查表，">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/web/js/es-feature.html">
+    <meta name="twitter:title" content="ECMAScript - 特性表">
+    <meta name="twitter:description" content="ECMAScript 特性速查表，">
+    <meta name="twitter:url" content="/web/js/es-feature.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label2" content="Filed under">
+  <link rel="preload" href="/assets/css/0.styles.2e4c45c6.css" as="style"><link rel="preload" href="/assets/js/app.b4e09755.js" as="script"><link rel="preload" href="/assets/js/2.c66a9939.js" as="script"><link rel="preload" href="/assets/js/51.b30b4207.js" as="script"><link rel="prefetch" href="/assets/js/10.5c5be6f9.js"><link rel="prefetch" href="/assets/js/11.fc587f1e.js"><link rel="prefetch" href="/assets/js/12.f0301b16.js"><link rel="prefetch" href="/assets/js/13.9d0f6c8c.js"><link rel="prefetch" href="/assets/js/14.a09f5b5e.js"><link rel="prefetch" href="/assets/js/15.8253bc76.js"><link rel="prefetch" href="/assets/js/16.cfa66aaf.js"><link rel="prefetch" href="/assets/js/17.dd919b0e.js"><link rel="prefetch" href="/assets/js/18.8196d348.js"><link rel="prefetch" href="/assets/js/19.ea6049ae.js"><link rel="prefetch" href="/assets/js/20.d698e539.js"><link rel="prefetch" href="/assets/js/21.1cefaaca.js"><link rel="prefetch" href="/assets/js/22.f98633a1.js"><link rel="prefetch" href="/assets/js/23.e5a5d96a.js"><link rel="prefetch" href="/assets/js/24.351ff918.js"><link rel="prefetch" href="/assets/js/25.212d6998.js"><link rel="prefetch" href="/assets/js/26.fedcacc8.js"><link rel="prefetch" href="/assets/js/27.34b405a1.js"><link rel="prefetch" href="/assets/js/28.37ddba98.js"><link rel="prefetch" href="/assets/js/29.14822b95.js"><link rel="prefetch" href="/assets/js/3.2cc310a6.js"><link rel="prefetch" href="/assets/js/30.92149253.js"><link rel="prefetch" href="/assets/js/31.d978dafe.js"><link rel="prefetch" href="/assets/js/32.b4852aac.js"><link rel="prefetch" href="/assets/js/33.a8d31921.js"><link rel="prefetch" href="/assets/js/34.63ffa4be.js"><link rel="prefetch" href="/assets/js/35.e2855b40.js"><link rel="prefetch" href="/assets/js/36.1a141cc7.js"><link rel="prefetch" href="/assets/js/37.e53aa17a.js"><link rel="prefetch" href="/assets/js/38.6a42e946.js"><link rel="prefetch" href="/assets/js/39.31ee07e0.js"><link rel="prefetch" href="/assets/js/4.d2a58c11.js"><link rel="prefetch" href="/assets/js/40.b2de36de.js"><link rel="prefetch" href="/assets/js/41.38ca2aaa.js"><link rel="prefetch" href="/assets/js/42.649ebf08.js"><link rel="prefetch" href="/assets/js/43.c52fd2e4.js"><link rel="prefetch" href="/assets/js/44.64651396.js"><link rel="prefetch" href="/assets/js/45.8652d104.js"><link rel="prefetch" href="/assets/js/46.0fd9fd48.js"><link rel="prefetch" href="/assets/js/47.07534aff.js"><link rel="prefetch" href="/assets/js/48.5d2afb88.js"><link rel="prefetch" href="/assets/js/49.c18639ad.js"><link rel="prefetch" href="/assets/js/5.bbfe7e5f.js"><link rel="prefetch" href="/assets/js/50.30eb96a6.js"><link rel="prefetch" href="/assets/js/52.1785af68.js"><link rel="prefetch" href="/assets/js/53.c77de63d.js"><link rel="prefetch" href="/assets/js/54.c1a8ac39.js"><link rel="prefetch" href="/assets/js/55.1824fcf7.js"><link rel="prefetch" href="/assets/js/56.9623546e.js"><link rel="prefetch" href="/assets/js/57.8fd4ef33.js"><link rel="prefetch" href="/assets/js/58.0b512a28.js"><link rel="prefetch" href="/assets/js/59.6feafa64.js"><link rel="prefetch" href="/assets/js/6.a6ef3a2b.js"><link rel="prefetch" href="/assets/js/60.e71554ee.js"><link rel="prefetch" href="/assets/js/61.2bdf5f9c.js"><link rel="prefetch" href="/assets/js/62.cbc4f22c.js"><link rel="prefetch" href="/assets/js/63.743fd28b.js"><link rel="prefetch" href="/assets/js/64.8ada447e.js"><link rel="prefetch" href="/assets/js/65.852ac151.js"><link rel="prefetch" href="/assets/js/66.235e032e.js"><link rel="prefetch" href="/assets/js/67.e0613176.js"><link rel="prefetch" href="/assets/js/68.4dcbff62.js"><link rel="prefetch" href="/assets/js/69.7a27b723.js"><link rel="prefetch" href="/assets/js/7.6588483a.js"><link rel="prefetch" href="/assets/js/70.21c9a9af.js"><link rel="prefetch" href="/assets/js/71.42158db4.js"><link rel="prefetch" href="/assets/js/72.9b7e07b8.js"><link rel="prefetch" href="/assets/js/73.bda844eb.js"><link rel="prefetch" href="/assets/js/74.6892e6bf.js"><link rel="prefetch" href="/assets/js/75.ebbe0044.js"><link rel="prefetch" href="/assets/js/76.834d70a7.js"><link rel="prefetch" href="/assets/js/77.aa66cd0f.js"><link rel="prefetch" href="/assets/js/78.d2f80b7d.js"><link rel="prefetch" href="/assets/js/79.2571d138.js"><link rel="prefetch" href="/assets/js/8.8431338c.js"><link rel="prefetch" href="/assets/js/80.a229c228.js"><link rel="prefetch" href="/assets/js/81.74fdbc5f.js"><link rel="prefetch" href="/assets/js/82.32f4b6cf.js"><link rel="prefetch" href="/assets/js/83.e701b7fc.js"><link rel="prefetch" href="/assets/js/84.6c05a9ec.js"><link rel="prefetch" href="/assets/js/85.ae5cecfc.js"><link rel="prefetch" href="/assets/js/86.a7e9e18a.js"><link rel="prefetch" href="/assets/js/87.6b3fe7b6.js"><link rel="prefetch" href="/assets/js/88.1315799c.js"><link rel="prefetch" href="/assets/js/89.49cb0662.js"><link rel="prefetch" href="/assets/js/9.34d5ca5a.js"><link rel="prefetch" href="/assets/js/90.3d317690.js"><link rel="prefetch" href="/assets/js/91.5749ff2e.js"><link rel="prefetch" href="/assets/js/92.57e5febb.js"><link rel="prefetch" href="/assets/js/93.71e9c14a.js"><link rel="prefetch" href="/assets/js/94.c18d81e9.js"><link rel="prefetch" href="/assets/js/95.8637ee5b.js"><link rel="prefetch" href="/assets/js/96.ac60b4b9.js">
+  <link rel="stylesheet" href="/assets/css/0.styles.2e4c45c6.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">从零开始的故事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link router-link-active">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link">
+  问题记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link router-link-active">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link">
+  问题记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web/" aria-current="page" class="sidebar-link">前端笔记</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/css/android-disable-img-preview.html" class="sidebar-link">禁用安卓点击图片预览</a></li><li><a href="/web/css/chrome-scroll-bar.html" class="sidebar-link">chrome 自定义滚动条样式</a></li><li><a href="/web/css/css-hack.html" class="sidebar-link">css - hack</a></li><li><a href="/web/css/css-name.html" class="sidebar-link">css - 命名规范</a></li><li><a href="/web/css/img-auto-size.html" class="sidebar-link">图片自适应宽高</a></li><li><a href="/web/css/inline-block-overflow-hidden.html" class="sidebar-link">inline-block 对齐</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>js</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/js/file-download.html" class="sidebar-link">文件下载</a></li><li><a href="/web/js/object-oriented-programming.html" class="sidebar-link">面向对象编程</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>移动端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/mobile/mobile-scroll-through.html" class="sidebar-link">滚动穿透</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/tool/babel-basic.html" class="sidebar-link">babel-basic</a></li><li><a href="/web/tool/babel-translate.html" class="sidebar-link">babel - preset-env和polyfill</a></li><li><a href="/web/tool/bash-pwd.html" class="sidebar-link">bash - 获取脚本的运行目录</a></li><li><a href="/web/tool/core-js.html" class="sidebar-link">core-js</a></li><li><a href="/web/tool/eslint-prettier-nuxt.html" class="sidebar-link">nuxt 配置 eslint 和 prettier</a></li><li><a href="/web/tool/git-command.html" class="sidebar-link">git - 常用命令</a></li><li><a href="/web/tool/git-commit-emoji.html" class="sidebar-link">git - emoji 指南</a></li><li><a href="/web/tool/git-set-origin-url.html" class="sidebar-link">git - 配置/修改远程仓库地址</a></li><li><a href="/web/tool/git-delete-branch.html" class="sidebar-link">git - 删除远程分支</a></li><li><a href="/web/tool/git-minor-version.html" class="sidebar-link">git - 快速获取小版本</a></li><li><a href="/web/tool/graphql-basic.html" class="sidebar-link">graphql - 入门</a></li><li><a href="/web/tool/http-status.html" class="sidebar-link">http - 状态码</a></li><li><a href="/web/tool/http-TIME_WAIT-CLOSE_WAIT.html" class="sidebar-link">http - TIMEWAIT，CLOSEWAIT异常</a></li><li><a href="/web/tool/JSON-schema-basic.html" class="sidebar-link">JSON Schema - 入门</a></li><li><a href="/web/tool/npm-common-use-tips.html" class="sidebar-link">npm - 常用操作技巧</a></li><li><a href="/web/tool/npm-package.json.html" class="sidebar-link">npm - package.json属性详解</a></li><li><a href="/web/tool/npm-version-management.html" class="sidebar-link">npm - 管理项目版本号</a></li><li><a href="/web/tool/npm-update-package.html" class="sidebar-link">npm - 一键更新依赖包</a></li><li><a href="/web/tool/reg-basic.html" class="sidebar-link">正则 - 入门</a></li><li><a href="/web/tool/reg-escape.html" class="sidebar-link">正则 - 转义特殊字符</a></li><li><a href="/web/tool/markdown-basic.html" class="sidebar-link">Markdown 基本语法</a></li><li><a href="/web/tool/webpack-error.html" class="sidebar-link">webpack - 常见错误</a></li><li><a href="/web/tool/webpack-split-chunks.html" class="sidebar-link">webpack - 使用 splitChunks 分离第三方库</a></li><li><a href="/web/tool/yarn-npm-clean-cache.html" class="sidebar-link">yarn 和 npm - 清理缓存包</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>杂项</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/other/article-collection.html" class="sidebar-link">文档收藏</a></li><li><a href="/web/other/github-personal-access-tokens.html" class="sidebar-link">github - 创建 personal access tokens（个人访问令牌）</a></li><li><a href="/web/other/node-spider-basic.html" class="sidebar-link">node - 爬虫初体验</a></li><li><a href="/web/other/idea-registered.html" class="sidebar-link">idea - 注册码持续更新</a></li><li><a href="/web/other/ie-image-dom7009.html" class="sidebar-link">IE - 图片加载报错DOM7009</a></li><li><a href="/web/other/mac-modify-host.html" class="sidebar-link">mac 修改 host</a></li><li><a href="/web/other/socket-error.html" class="sidebar-link">socket - 常见错误</a></li><li><a href="/web/other/timestamp-basic.html" class="sidebar-link">timestamp - 日期格式</a></li><li><a href="/web/other/vuepress-checkbox.html" class="sidebar-link">VuePress - 复选框、任务列表不生效怎么处理</a></li><li><a href="/web/other/websocket-basic.html" class="sidebar-link">webSocket - 入门</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ecmascript-新特性"><a href="#ecmascript-新特性" class="header-anchor">#</a> ECMAScript - 新特性</h1> <p>// todo
+ES2021-ES12
+String.protype.replaceAll
+在 ES2021 之前，要替换掉一个字符串中的所有指定字符，我们可以这么做：
+const str = &quot;a+b+c+&quot;;
+const newStr = str.replace(/+/g, &quot;🤣&quot;);
+console.log(newStr); //a🤣b🤣c🤣
+复制代码
+ES2021 则提出了 replaceAll 方法，并将其挂载在 String 的原型上，可以这么用：
+const str = &quot;a+b+c+&quot;;
+const newStr = str.replaceAll(&quot;+&quot;, &quot;🤣&quot;);
+console.log(newStr); //a🤣b🤣c🤣
+复制代码
+Promise.any
+Promise.any</p> <p>接收一个 Promise 可迭代对象，只要其中任意一个 promise 成功，就返回那个已经成功的 promise
+如果所有的 promises 都失败/拒绝，就返回一个失败的 promise</p> <p>Promise.race 的对比:</p> <p>只要任意一个 promise 的状态改变(不管成功 or 失败)，那么就返回那个 promise</p> <p>Promise.all的对比</p> <p>只要任意一个 promise 失败，则返回失败的 promise
+当所有异步操作都成功后，才返回 promise,返回值组成一个数组</p> <p>const pErr = new Promise((resolve, reject) =&gt; {
+reject(&quot;总是失败&quot;);
+});</p> <p>const pSlow = new Promise((resolve, reject) =&gt; {
+setTimeout(resolve, 500, &quot;最终完成&quot;);
+});</p> <p>const pFast = new Promise((resolve, reject) =&gt; {
+setTimeout(resolve, 100, &quot;很快完成&quot;);
+});</p> <p>// 使用 .then .catch
+Promise.any([pErr, pSlow, pFast])
+.then((value) =&gt; {
+// 返回最先成功的一个promise ,即: pFast-&quot;很快完成&quot;
+console.log(value);
+})
+.catch((err) =&gt; {
+// 所有的 promise 都失败时触发
+});</p> <p>// 使用 async-await
+try {
+const first = await Promise.any(promises); // 任何一个 promise 成功返回。
+console.log(first);
+} catch (error) {
+// 所有的 promise 都失败了
+console.log(error);
+}
+复制代码
+WeakRef
+WeakRef 提案主要包含两个新功能：</p> <p>可以通过 WeakRef 类来给某个对象创建一个弱引用
+可以通过 FinalizationRegistry 类，在某个对象被垃圾回收之后，执行一些自定义方法</p> <p>上述两个新功能可以同时使用，也可以单独使用，取决于你的需求。一个 WeakRef 对象包含一个对于某个对象的弱引用，被称为目标或引用。通过弱引用一个对象，可以让该对象在没有其它引用的情况下被垃圾回收机制回收。WeakRef 主要用来缓存和映射一些大型对象，当你希望某个对象在不被其它地方引用的情况下及时地被垃圾回收，那么你就可以使用它。
+function toogle(element) {
+const weakElement = new WeakRef(element);
+let intervalId = null;</p> <p>function toggle() {
+const el = weakElement.deref();
+if (!el) {
+return clearInterval(intervalId);
+}
+const decoration = weakElement.style.textDecoration;
+const style = decoration === &quot;none&quot; ? &quot;underline&quot; : &quot;none&quot;;
+decoration = style;
+}
+intervalId = setInterval(toggle, 1000);
+}
+const element = document.getElementById(&quot;link&quot;);
+toogle(element);
+setTimeout(() =&gt; element.remove(), 10000);
+复制代码
+FinalizationRegistry 接收一个注册器回调函数，可以利用该注册器为指定对象注册一个事件监听器，当这个对象被垃圾回收之后，会触发监听的事件，具体步骤如下。首先，创建一个注册器：
+const registry = new FinalizationRegistry((heldValue) =&gt; {
+// ....
+});
+复制代码
+接着注册一个指定对象，同时也可以给注册器回调传递一些参数：
+registry.register(theObject, &quot;some value&quot;);
+复制代码
+逻辑赋值运算符
+详细信息参考ts39-proposal-logical-assignment
+逻辑赋值运算符结合了逻辑运算符和赋值表达式。逻辑赋值运算符有两种：</p> <p>或等于（||=）
+且等于（&amp;&amp;=）
+??=</p> <p>||=
+const giveKey = () =&gt; {
+return &quot;somekey&quot;;
+};
+let userDetails = { name: &quot;chika&quot;, age: 5, room: 10, key: &quot;&quot; };
+userDetails.key ||= giveKey();
+console.log(userDetails.key);</p> <p>//output : somekey
+复制代码
+&amp;&amp;=
+const deleteKey = () =&gt; {
+return &quot; &quot;;
+};
+let userDetails = { name: &quot;chika&quot;, age: 5, room: 10, key: &quot;990000&quot; };
+userDetails.key &amp;&amp;= deleteKey();
+console.log(userDetails.key);</p> <p>//output : &quot;&quot;
+复制代码
+??= 空赋值运算符
+??= 也被称为空赋值运算符，与上面的非空运算符相关。看看它们之间的联系：
+var x = null;
+var y = 5;
+console.log((x ??= y)); // =&gt; 5
+console.log((x = x ?? y)); // =&gt; 5
+复制代码
+仅当值为 null 或 undefined 时，此赋值运算符才会赋值。上面的例子强调了这个运算符本质上是空赋值的语法糖（类似的语法糖：a = a + b 可写成 a += b ）。接下来，让我们看看这个运算符与默认参数（默认参数是 ES6 引入的新语法，仅当函数参数为 undefined 时，给它设置一个默认值）的区别：
+function gameSettingsWithNullish(options) {
+options.gameSpeed ??= 1;
+options.gameDiff ??= &quot;easy&quot;;
+return options;
+}
+function gameSettingsWithDefaultParams(gameSpeed = 1, gameDiff = &quot;easy&quot;) {
+return { gameSpeed, gameDiff };
+}
+gameSettingsWithNullish({ gameSpeed: null, gameDiff: null }); // =&gt; {gameSpeed: 1, gameDiff: 'easy'}
+gameSettingsWithDefaultParams(undefined, null); // =&gt; {gameSpeed: null, gameDiff: null}
+复制代码
+上述函数处理空值的方式有一个值得注意的区别。默认参数将用空参数（这里的空参数，只能是 undefined）覆盖默认值，空赋值运算符将不会。默认参数和空赋值都不会覆盖未定义的值。MDN 官方文档
+const getKey = () =&gt; {
+return &quot;somekey&quot;;
+};
+let userDetails = { name: &quot;chika&quot;, age: 5, room: 10 };
+userDetails.key ??= getKey();
+console.log(userDetails.key);</p> <p>//output : &quot;somekey&quot;
+复制代码
+数字分隔符
+通过这个功能，我们利用 _，U+005F 分隔符来将数字分组，提高数字的可读性：
+1_000_000_000; // 十亿
+101_475_938.38; // 亿万</p> <p>const amount = 12345_00; // 12,345
+const amount = 123_4500; // 123.45 (保留 4 位小数)
+const amount = 1_234_500; // 1,234,500</p> <p>0.000_001; // 百万分之一
+1e10_000; // 10^10000</p> <p>//
+const binary_literals = 0b1010_0001_1000_0101;
+const hex_literals = 0xa0_b0_c0;
+//
+const bigInt_literals = 1_000_000_000_000n;
+//
+const octal_literal = 0o1234_5670;
+复制代码</p> <p>ES2020-ES11
+ES2020 是与 2020 年相对应的 ECMAScript 版本
+String.protype.matchAll
+matchAll()方法返回一个正则表达式在当前字符串的所有匹配
+不过，它返回的是一个遍历器（Iterator），而不是数组。遍历器转为数组是非常简单的，使用...运算符和 Array.from()方法就可以了。
+const string = &quot;test1test2test3&quot;;
+const regex = /t(e)(st(\d?))/g;</p> <p>const newdata = string.matchAll(regex);</p> <p>for (const match of newdata) {
+console.log(match);
+}
+// [&quot;test1&quot;, &quot;e&quot;, &quot;st1&quot;, &quot;1&quot;, index: 0, input: &quot;test1test2test3&quot;]
+// [&quot;test2&quot;, &quot;e&quot;, &quot;st2&quot;, &quot;2&quot;, index: 5, input: &quot;test1test2test3&quot;]
+// [&quot;test3&quot;, &quot;e&quot;, &quot;st3&quot;, &quot;3&quot;, index: 10, input: &quot;test1test2test3&quot;]</p> <p>// 转为数组的方法一
+[...newdata];</p> <p>// 转为数组的方法二
+Array.from(newdata);
+复制代码
+详细内容参考ES 入门-matchAll
+Dynamic import
+import(specifier)函数，支持动态加载模块, import 函数的参数 specifier，指定所要加载的模块的位置。import 命令能够接受什么参数，import()函数就能接受什么参数，两者区别主要是后者为动态加载。
+import()返回一个 Promise 对象
+const someVariable = &quot;user&quot;;</p> <p>import(<code>./some-modules/${someVariable}.js</code>)
+.then((module) =&gt; {
+// 业务逻辑
+module.loadPageInto(main);
+})
+.catch((err) =&gt; {
+// 加载失败
+});
+复制代码
+详细内容参考ES 入门-import
+Promise.allSettled
+Promise.allSettled()方法接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例。只有等到所有这些参数实例都返回结果，不管是fulfilled还是rejected，包装实例才会结束
+有时候，我们不关心异步请求的结果，只关心所有的请求有没有结束。这时，Promise.allSettled()方法就很有用
+const promises = [fetch(&quot;index.html&quot;), fetch(&quot;https://does-not-exist/&quot;)];
+const results = await Promise.allSettled(promises);</p> <p>// 过滤出成功的请求
+const successfulPromises = results.filter((p) =&gt; p.status === &quot;fulfilled&quot;);</p> <p>// 过滤出失败的请求，并输出原因
+const errors = results
+.filter((p) =&gt; p.status === &quot;rejected&quot;)
+.map((p) =&gt; p.reason);
+复制代码
+globalThis
+ES2020 之前获取不同环境的this需要如下封装
+const getGlobalThis = () =&gt; {
+// 在 webworker 或 service worker 中
+if (typeof self !== &quot;undefined&quot;) return self;</p> <p>// 在浏览器中
+if (typeof window !== &quot;undefined&quot;) return window;</p> <p>// 在 Node.js 中
+if (typeof global !== &quot;undefined&quot;) return global;</p> <p>// 独立的 JavaScript shell
+if (typeof this !== &quot;undefined&quot;) return this;</p> <p>throw new Error(&quot;Unable to locate global object&quot;);
+};
+const theGlobalThis = getGlobalThis();</p> <p>if (typeof theGlobalThis.setTimeout !== &quot;function&quot;) {
+// 此环境中没有 setTimeout 方法！
+}
+复制代码
+现在，globalThis 提供了一个标准的方式来获取不同环境下的全局 this  对象（也就是全局对象自身）
+if (typeof globalThis.setTimeout !== &quot;function&quot;) {
+// 此环境中没有 setTimeout 方法！
+}
+复制代码
+详细内容参考MDN-globalThis
+空位合并操作符（Nullish coalescing Operator）
+在 JS 中，?? 运算符被称为非空运算符。如果第一个参数不是 null/undefined（这里只有两个假值，但是 JS 中假值包含：未定义 undefined、空对象 null、数值 0、空数字 NaN、布尔 false，空字符串''，不要搞混了），将返回第一个参数，否则返回第二个参数。比如，
+null ?? 5; // =&gt; 5
+3 ?? 5; // =&gt; 3
+复制代码
+给变量设置默认值时，以前常用 ||逻辑或运算符，例如，
+const prevMoney = 1;
+const currMoney = 0;
+const noAccount = null;
+const futureMoney = -1;
+function moneyAmount(money) {
+return money || <code>账户未开通</code>;
+}
+console.log(moneyAmount(prevMoney)); // =&gt; 1
+console.log(moneyAmount(currMoney)); // =&gt; 账户未开通
+console.log(moneyAmount(noAccount)); // =&gt; 账户未开通
+console.log(moneyAmount(futureMoney)); // =&gt; -1
+复制代码
+上面我们创建了函数 moneyAmount，它返回当前用户余额。我们使用 || 运算符来识别没有帐户的用户。然而，当用户没有帐户时，这意味着什么？将无账户视为空而不是 0 更为准确，因为银行账户可能没有（或负）货币。在上面的例子中，|| 运算符将 0 视为一个虚假值，不应该包括用户有 0 美元的帐户。让我们使用?? 非空运算符来解决这个问题：
+const currMoney = 0;
+const noAccount = null;
+function moneyAmount(money) {
+return money ?? <code>账户未开通</code>;
+}
+moneyAmount(currMoney); // =&gt; 0
+moneyAmount(noAccount); // =&gt; <code>账户未开通</code>
+复制代码
+概括地说 ?? 运算符允许我们在忽略错误值（如 0 和空字符串）的同时指定默认值。
+可选链操作符（Optional Chaining）
+?. 也叫链判断运算符。它允许开发人员读取深度嵌套在对象链中的属性值，而不必验证每个引用。当引用为空时，表达式停止计算并返回 undefined。比如：
+var travelPlans = {
+destination: &quot;DC&quot;,
+monday: {
+location: &quot;National Mall&quot;,
+budget: 200,
+},
+};
+console.log(travelPlans.tuesday?.location); // =&gt; undefined
+复制代码
+现在，把我们刚刚学到的结合起来
+function addPlansWhenUndefined(plans, location, budget) {
+if (plans.tuesday?.location == undefined) {
+var newPlans = {
+plans,
+tuesday: {
+location: location ?? &quot;公园&quot;,
+budget: budget ?? 200,
+},
+};
+} else {
+newPlans ??= plans; // 只有 newPlans 是 undefined 时，才覆盖
+console.log(&quot;已安排计划&quot;);
+}
+return newPlans;
+}
+// 对象 travelPlans 的初始值，来自上面一个例子
+var newPlans = addPlansWhenUndefined(travelPlans, &quot;Ford 剧院&quot;, null);
+console.log(newPlans);
+// =&gt; { plans:
+// { destination: 'DC',
+// monday: { location: '国家购物中心', budget: 200 } },
+// tuesday: { location: 'Ford 剧院', budget: 200 } }
+newPlans = addPlansWhenUndefined(newPlans, null, null);
+// logs =&gt; 已安排计划
+// returns =&gt; newPlans object
+复制代码
+上面的例子包含了我们到目前为止所学的所有运算符。现在我们已经创建了一个函数，该函数将计划添加到当前没有嵌套属性的对象 tuesday.location 中。我们还使用了非空运算符来提供默认值。此函数将错误地接受像“0”这样的值作为有效参数。这意味着 budget 可以设置为零，没有任何错误。
+BigInt primitive type
+旧版本的 JS 标准最大的整数只能是253 - 1， 现在使用BigInt 用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。 这是 ECMAScript 的又一种数据类型。
+可以用在一个整数字面量后面加 n 的方式定义一个 BigInt ，如：10n，或者调用函数 BigInt()。
+const theBiggestInt = 9007199254740991n;</p> <p>const alsoHuge = BigInt(9007199254740991);
+// ↪ 9007199254740991n
+复制代码</p> <p>ES 入门-BigInt</p> <p>ES2019-ES10
+Array#{flat,flatMap}
+数组的成员有时还是数组，Array.prototype.flat()用于将嵌套的数组“拉平”，变成一维的数组。该方法返回一个新数组，对原数据没有影响。
+[1, 2, [3, 4]].flat();
+// [1, 2, 3, 4]
+复制代码
+flatMap()只能展开一层数组。
+// 相当于 [[[2]], [[4]], [[6]], [[8]]].flat()
+[1, 2, 3, 4].flatMap((x) =&gt; [[x * 2]]);
+// [[2], [4], [6], [8]]
+复制代码
+详细内容参考ES 入门-flat
+Object.fromEntries
+Object.fromEntries()方法是Object.entries()的逆操作，用于将一个键值对数组转为对象。
+Object.fromEntries([
+[&quot;foo&quot;, &quot;bar&quot;],
+[&quot;baz&quot;, 42],
+]);
+// { foo: &quot;bar&quot;, baz: 42 }
+复制代码
+该方法的主要目的，是将键值对的数据结构还原为对象，因此特别适合将 Map 结构转为对象。
+// 例一
+const entries = new Map([
+[&quot;foo&quot;, &quot;bar&quot;],
+[&quot;baz&quot;, 42],
+]);</p> <p>Object.fromEntries(entries);
+// { foo: &quot;bar&quot;, baz: 42 }</p> <p>// 例二
+const map = new Map().set(&quot;foo&quot;, true).set(&quot;bar&quot;, false);
+Object.fromEntries(map);
+// { foo: true, bar: false }
+复制代码
+String#{trimStart,trimEnd}
+ES2019 对字符串实例新增了trimStart()和trimEnd()这两个方法。它们的行为与trim()一致，trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格。它们返回的都是新字符串，不会修改原始字符串。
+const s = &quot;  abc  &quot;;</p> <p>s.trim(); // &quot;abc&quot;
+s.trimStart(); // &quot;abc  &quot;
+s.trimEnd(); // &quot;  abc&quot;
+复制代码
+Symbol#description
+ES2019 提供了一个实例属性description，直接返回 Symbol 的描述。
+// 创建 Symbol 的时候，可以添加一个描述。
+const sym = Symbol(&quot;foo&quot;);</p> <p>sym.description; // &quot;foo&quot;
+复制代码
+上面代码中，sym 的描述就是字符串 foo。
+try { } catch {} // optional binding
+旧版本的try / catch语句中的catch子句需要一个变量。 现在可以不加了
+// 旧版本
+try {
+console.log(a);
+} catch (error) {
+console.log(&quot;报错了&quot;);
+}</p> <p>// ES2019-SE10
+try {
+console.log(a);
+} catch {
+console.log(&quot;报错了&quot;);
+}
+复制代码
+U+2028 和 U+2029
+在 ES2019 之前的版本中，不接受不转义的</p> <p>行分隔符U + 2028
+段落分隔符U + 2029</p> <p>ES2019 允许 JavaScript 字符串直接输入 U+2028（行分隔符）和 U+2029（段分隔符）。
+/*
+ES2019之前，下面的代码会报错</p> <p>ES2019 下面代码不会报错。
+*/
+const PS = eval(&quot;'\u2029'&quot;);
+复制代码
+ES 入门-U+2028 和 U+2029
+JSON-stringify-的改造
+为了确保返回的是合法的 UTF-8 字符，ES2019 改变了 JSON.stringify()的行为。如果遇到 0xD800 到 0xDFFF 之间的单个码点，或者不存在的配对形式，它会返回转义字符串，留给应用自己决定下一步的处理。
+JSON.stringify(&quot;\u{D834}&quot;); // &quot;&quot;\uD834&quot;&quot;
+JSON.stringify(&quot;\uDF06\uD834&quot;); // &quot;&quot;\udf06\ud834&quot;&quot;
+复制代码
+ES 入门-JSON-stringify-的改造
+Array.prototype.sort() 的稳定排序
+早先的 ECMAScript 没有规定，Array.prototype.sort()的默认排序算法是否稳定，留给浏览器自己决定，这导致某些实现是不稳定的。ES2019 明确规定，Array.prototype.sort()的默认排序算法必须稳定。这个规定已经做到了，现在 JavaScript 各个主要实现的默认排序算法都是稳定的。
+const arr = [&quot;peach&quot;, &quot;straw&quot;, &quot;apple&quot;, &quot;spork&quot;];</p> <p>const stableSorting = (s1, s2) =&gt; {
+if (s1[0] &lt; s2[0]) return -1;
+return 1;
+};</p> <p>arr.sort(stableSorting);
+// [&quot;apple&quot;, &quot;peach&quot;, &quot;straw&quot;, &quot;spork&quot;]
+复制代码
+ES 入门-排序稳定性
+revised Function#toString
+ES2019 对函数实例的 toString()方法做出了修改。
+toString()方法返回函数代码本身，以前会省略注释和空格。
+function /* foo comment */ foo() {}</p> <p>// 老版本
+foo.toString();
+// function foo() {}</p> <p>// 新版
+foo.toString();
+// &quot;function /* foo comment */ foo () {}&quot;
+复制代码</p> <p>ES2018-ES9
+解除模板字面量限制(Lifting template literal restriction).
+ES2018 放松了对标签模板里面的字符串转义的限制。如果遇到不合法的字符串转义，就返回undefined，而不是报错，并且从raw属性上面可以得到原始字符串。
+function tag(strs) {
+strs[0] === undefined
+strs.raw[0] === &quot;\unicode and \u{55}&quot;;
+}
+tag<code>\unicode and \u{55}</code>
+复制代码
+上面代码中，模板字符串原本是应该报错的，但是由于放松了对字符串转义的限制，所以不报错了，JavaScript 引擎将第一个字符设置为undefined，但是raw属性依然可以得到原始字符串，因此tag函数还是可以对原字符串进行处理。</p> <p>ES 入门-模板字符串的限制
+ES 入门-row
+ES 入门-修饰符：u</p> <p>正则之 s 修饰符：dotAll 模式-(s (dotAll) flag for regular expressions).
+ES2018 引入 s 修饰符，使得.可以匹配任意单个字符。
+/foo.bar/s.test(&quot;foo\nbar&quot;); // true
+复制代码
+这被称为dotAll模式，即点（dot）代表一切字符。所以，正则表达式还引入了一个dotAll属性，返回一个布尔值，表示该正则表达式是否处在dotAll模式。
+ES 入门-修饰符：dotAll 模式
+正则之具名组匹配(RegExp named capture groups)
+ES2018 引入了具名组匹配（Named Capture Groups），允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token constant">RE_DATE</span> <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\d{2})</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> matchObj <span class="token operator">=</span> <span class="token constant">RE_DATE</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">&quot;1999-12-31&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> year <span class="token operator">=</span> matchObj<span class="token punctuation">.</span>groups<span class="token punctuation">.</span>year<span class="token punctuation">;</span> <span class="token comment">// &quot;1999&quot;</span>
+<span class="token keyword">const</span> month <span class="token operator">=</span> matchObj<span class="token punctuation">.</span>groups<span class="token punctuation">.</span>month<span class="token punctuation">;</span> <span class="token comment">// &quot;12&quot;</span>
+<span class="token keyword">const</span> day <span class="token operator">=</span> matchObj<span class="token punctuation">.</span>groups<span class="token punctuation">.</span>day<span class="token punctuation">;</span> <span class="token comment">// &quot;31&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>ES 入门-修饰符：具名组匹配
+Rest/Spread Properties.
+ES6 为数组引入了扩展运算符的写法，
+在 ES2018 中，为对象也引入了此写法
+const obj = { a: &quot;a&quot;, b: &quot;b&quot;, c: &quot;c&quot;, d: &quot;d&quot;, e: &quot;e&quot; };</p> <p>// 对象结构
+const { a, b, c, ...rest } = obj;</p> <p>// 组成新对象
+const newObj = { a, ...rest };
+复制代码
+正则之后行断言(RegExp Lookbehind Assertions.)
+ES2018 引入后行断言
+“后行断言”指: x只有不在y后面才匹配，必须写成/(?&lt;!y)x/。比如，只匹配不在美元符号后面的数字，要写成/(?&lt;!$)\d+/。
+/(?&lt;=$)\d+/.exec('Benjamin Franklin is on the $100 bill')  // [&quot;100&quot;]
+/(?&lt;!$)\d+/.exec('it’s is worth about €90')                // [&quot;90&quot;]
+复制代码
+使用后行断言进行字符串替换。
+const RE_DOLLAR_PREFIX = /(?&lt;=$)foo/g;
+&quot;$foo %foo foo&quot;.replace(RE_DOLLAR_PREFIX, &quot;bar&quot;);
+// '$bar %foo foo'
+复制代码
+ES 入门-后行断言
+Unicode 属性类(RegExp Unicode Property Escapes)
+ES2018 引入了一种新的类的写法\p{...}和\P{...}，允许正则表达式匹配符合 Unicode 某种属性的所有字符。
+const regexGreekSymbol = /\p{Script=Greek}/u;
+regexGreekSymbol.test(&quot;π&quot;); // true</p> <p>// 匹配所有空格
+const reg = /\p{White_Space}/;</p> <p>// 匹配所有的箭头字符
+const regexArrows = /^\p{Block=Arrows}+$/u;
+regexArrows.test(&quot;←↑→↓↔↕↖↗↘↙⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇧⇩&quot;); // true
+复制代码
+ES 入门-Unicode 属性类
+Promise.prototype.finally.
+finally()方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。该方法是 ES2018 引入标准的。
+promise
+.then(result =&gt; {···})
+.catch(error =&gt; {···})
+.finally(() =&gt; {···});
+复制代码
+上面代码中，不管 promise 最后的状态，在执行完then或catch指定的回调函数以后，都会执行finally方法指定的回调函数。
+ES 入门-finally
+按顺序完成异步操作(Asynchronous Iteration)
+实际开发中，经常遇到一组异步操作，需要按照顺序完成。比如，依次远程读取一组 URL，然后按照读取的顺序输出结果。
+async function logInOrder(urls) {
+// 并发读取远程URL
+const textPromises = urls.map(async (url) =&gt; {
+const response = await fetch(url);
+return response.text();
+});</p> <p>// 按次序输出
+for (const textPromise of textPromises) {
+console.log(await textPromise);
+}
+}
+复制代码
+async function getData() {
+const promises = [fetch(&quot;url1&quot;), fetch(&quot;url2&quot;), fetch(&quot;url3&quot;), fetch(&quot;url4&quot;)];
+for (const item of promises) {
+// 打印出promise
+console.log(item);
+}</p> <p>for await (const item of promises) {
+// 打印出请求的结果
+console.log(item);
+}
+}
+复制代码
+ES 入门-顺序异步操作</p> <p>ES2017-ES8
+Object.values/Object.entries
+Object.values 方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。
+const obj = { foo: &quot;bar&quot;, baz: 42 };
+Object.values(obj);
+// [&quot;bar&quot;, 42]</p> <p>const obj = { 100: &quot;a&quot;, 2: &quot;b&quot;, 7: &quot;c&quot; };
+Object.values(obj);
+// [&quot;b&quot;, &quot;c&quot;, &quot;a&quot;]
+复制代码
+Object.entries方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。
+const obj = { foo: &quot;bar&quot;, baz: 42 };
+Object.entries(obj);
+// [ [&quot;foo&quot;, &quot;bar&quot;], [&quot;baz&quot;, 42] ]
+复制代码
+Object.entries 的基本用途是遍历对象的属性。
+let obj = { one: 1, two: 2 };
+for (let [k, v] of Object.entries(obj)) {
+console.log(<code>${JSON.stringify(k)}: ${JSON.stringify(v)}</code>);
+}
+// &quot;one&quot;: 1
+// &quot;two&quot;: 2
+复制代码
+Object.entries 方法的另一个用处是，将对象转为真正的 Map 结构。
+const obj = { foo: &quot;bar&quot;, baz: 42 };
+const map = new Map(Object.entries(obj));
+map; // Map { foo: &quot;bar&quot;, baz: 42 }
+复制代码
+String padding
+ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。
+&quot;x&quot;.padStart(5, &quot;ab&quot;); // 'ababx'
+&quot;x&quot;.padStart(4, &quot;ab&quot;); // 'abax'</p> <p>&quot;x&quot;.padEnd(5, &quot;ab&quot;); // 'xabab'
+&quot;x&quot;.padEnd(4, &quot;ab&quot;); // 'xaba'
+复制代码
+padStart()的常见用途是为数值补全指定位数。下面代码生成 10 位的数值字符串。
+&quot;1&quot;.padStart(10, &quot;0&quot;); // &quot;0000000001&quot;
+&quot;12&quot;.padStart(10, &quot;0&quot;); // &quot;0000000012&quot;
+&quot;123456&quot;.padStart(10, &quot;0&quot;); // &quot;0000123456&quot;
+复制代码
+另一个用途是提示字符串格式。
+&quot;12&quot;.padStart(10, &quot;YYYY-MM-DD&quot;); // &quot;YYYY-MM-12&quot;
+&quot;09-12&quot;.padStart(10, &quot;YYYY-MM-DD&quot;); // &quot;YYYY-09-12&quot;
+复制代码
+Object.getOwnPropertyDescriptors
+ES2017 引入了 Object.getOwnPropertyDescriptors()方法，返回指定对象所有自身属性（非继承属性）的描述对象。</p> <p>value — 属性实际的值
+writable — 属性的值是否可以被修改
+get — 获取函数，在读取属性时调用
+set — 设置函数，在写入属性时调用
+configurable — 属性是否可以通过 delete 删除并重新定义，是否可以修改它的特 性，以及是否可以把它改为访问器属性
+enumerable — 属性是否可以通过 for-in 循环返回</p> <p>const obj = {
+foo: 123,
+get bar() {
+return &quot;abc&quot;;
+},
+};</p> <p>Object.getOwnPropertyDescriptors(obj);
+// { foo:
+//    { value: 123,
+//      writable: true,
+//      enumerable: true,
+//      configurable: true },
+//   bar:
+//    { get: [Function: get bar],
+//      set: undefined,
+//      enumerable: true,
+//      configurable: true } }
+复制代码
+该方法的引入目的，主要是为了解决 Object.assign()无法正确拷贝 get 属性和 set 属性的问题。
+Object.getOwnPropertyDescriptors()方法的另一个用处，是配合 Object.create()方法，将对象属性克隆到一个新对象。这属于浅拷贝。
+const shallowClone = (obj) =&gt;
+Object.create(
+Object.getPrototypeOf(obj),
+Object.getOwnPropertyDescriptors(obj),
+);
+复制代码
+更多详细内容参考ES 入门教程-getOwnPropertyDescriptors
+函数参数的尾逗号
+ES2017 允许函数的最后一个参数有尾逗号（trailing comma）。
+此前，函数定义和调用时，都不允许最后一个参数后面出现逗号。
+function clownsEverywhere(param1, param2,) {
+/* ... */
+}</p> <p>clownsEverywhere(&quot;foo&quot;, &quot;bar&quot;,);
+复制代码
+更多详细内容参考ES 入门教程-函数参数的尾逗号
+异步函数(Async functions)
+ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
+async 函数是什么？一句话，它就是 Generator 函数的语法糖。
+function fakeRequest() {
+return new Promise((resolve, reject) =&gt; {
+setTimeout(() =&gt; {
+resolve(&quot;请求成功&quot;);
+}, 2000);
+});
+}</p> <p>async function getData() {
+console.log(&quot;start&quot;);
+const res = await fakeRequest();
+console.log(res);
+console.log(&quot;end&quot;);
+}
+getData();
+/*
+1.start
+2.请求成功
+3.end
+*/
+复制代码
+使用 Atomics 共享内存
+Atomics 对象提供了一组静态方法对 SharedArrayBuffer 和 ArrayBuffer 对象进行原子操作。
+更多详细内容参考MDN-Atomics</p> <p>ES2016-ES7
+Array.prototype.includes
+Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。
+[1, 2, 3]
+.includes(2) // true
+[(1, 2, 3)].includes(4) // false
+[(1, 2, NaN)].includes(NaN); // true
+复制代码
+求幂运算符(Exponentiation operator)
+// 2的平方
+2 ** 2; // 4
+// 2的三次方
+2 ** 3; // 8
+复制代码
+更多详细内容参考ES 入门教程-指数运算符</p> <p>ES2015-ES6
+推荐阮一峰大佬的ES 入门教程,中文文档没有比他更详细的了
+箭头函数(arrows)
+箭头函数是使用=&gt;语法的函数简写。与一般函数不同的是</p> <p>函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。</p> <p>this 对象的指向是可变的，但是在箭头函数中，它是固定的。</p> <p>不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</p> <p>var f = (v) =&gt; v;</p> <p>// 等同于
+var f = function (v) {
+return v;
+};</p> <p>function foo() {
+setTimeout(() =&gt; {
+console.log(&quot;id:&quot;, this.id);
+}, 100);
+}</p> <p>var id = 21;
+// 箭头函数导致this总是指向函数定义生效时所在的对象（{id: 42}），所以打印出来的是42
+foo.call({ id: 42 });
+// id: 42</p> <p>// 对象不构成单独的作用域,使得this指向全局对象
+globalThis.s = 21;
+const obj = {
+s: 42,
+m: () =&gt; console.log(this.s),
+};</p> <p>obj.m(); // 21
+复制代码
+更多详细内容参考ES 入门教程-箭头函数
+类(Class)
+// ES5
+function Point(x, y) {
+this.x = x;
+this.y = y;
+}</p> <p>Point.prototype.toString = function () {
+return &quot;(&quot; + this.x + &quot;, &quot; + this.y + &quot;)&quot;;
+};</p> <p>var p = new Point(1, 2);</p> <p>// ES6
+class Point {
+constructor(x, y) {
+this.x = x;
+this.y = y;
+}</p> <p>toString() {
+return &quot;(&quot; + this.x + &quot;, &quot; + this.y + &quot;)&quot;;
+}
+}
+复制代码
+更多详细内容参考ES 入门教程-Class
+对象的扩展(enhanced object literals)
+对象的属性的简洁表示法
+const foo = &quot;bar&quot;;
+const method = function () {
+return &quot;Hello!&quot;;
+};</p> <p>const filed = &quot;name&quot;;</p> <p>const baz = {
+foo,
+method,
+[filed]: &quot;小王&quot;,
+};</p> <p>// 等同于
+const baz = {
+foo: foo,
+method: function () {
+return &quot;Hello!&quot;;
+},
+name: &quot;小王&quot;,
+};
+复制代码
+更多详细内容参考ES 入门教程-对象扩展
+模板字符串
+// 字符串中嵌入变量
+let name = &quot;Bob&quot;,
+time = &quot;today&quot;;
+<code>Hello ${name}, how are you ${time}?</code>;
+复制代码
+更多详细内容参考ES 入门教程-字符串模板
+数组解构+扩展运算符
+var [a] = [];</p> <p>a === undefined; // true</p> <p>var [a = 1] = [];
+a === 1; // true
+复制代码
+更多详细内容参考ES 入门教程-数组的扩展运算符
+函数默认参数+剩余参数+扩展运算符
+//如果没有传递y 或者y===undefined ，则y=12
+function f(x, y = 12) {
+return x + y;
+}
+f(3) == 15;
+复制代码
+function f(x, ...y) {
+// y 是一个数组
+return x * y.length;
+}
+f(3, &quot;hello&quot;, true) == 6;
+复制代码
+function f(x, y, z) {
+return x + y + z;
+}
+// Pass each elem of array as argument
+f(...[1, 2, 3]) == 6;
+复制代码
+更多详细内容参考ES 入门教程-函数默认参数
+块级作用域变量
+随着 ES6 中引入 let/const 关键字，JS 才具有函数作用域和全局作用域，现在 JS 也可以有块级作用域了。
+function f() {
+{
+let x;
+{
+// 正常，因为在一个新的块级作用域中
+const x = &quot;sneaky&quot;;
+// const 定义的是常量无法被修改，因此会报错
+x = &quot;foo&quot;;
+}
+// 在块级作用域中已声明x,因此会报错
+let x = &quot;inner&quot;;
+}
+}
+复制代码
+更多详细内容参考ES 入门教程-unicode
+遍历/迭代器+for..of(iterators + for..of)
+一个数据结构只要部署了 Symbol.iterator 属性，就被视为具有 iterator 接口，就可以用 for...of 循环遍历它的成员。也就是说，for...of 循环内部调用的是数据结构的 Symbol.iterator 方法。
+for ... of是for ... in和forEach()的替代方法，它循环访问可迭代的数据结构，如数组，映射，集合和字符串。
+JavaScript 原有的 for...in 循环，只能获得对象的键名，不能直接获取键值。ES6 提供 for...of 循环，允许遍历获得键值。
+var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;];</p> <p>for (let a in arr) {
+console.log(a); // 0 1 2 3
+}</p> <p>for (let a of arr) {
+console.log(a); // a b c d
+}</p> <p>const str = &quot;helloworld&quot;;
+for (let a of str) {
+console.log(a); // h e l l o w o r l d
+}
+复制代码
+更多详细内容参考ES 入门教程-iterators
+生成器(generators)
+Generators 使用function *和yield简化了迭代器的创建。 声明为function <em>的函数一个遍历器对象，也就是说，Generator 函数是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。
+生成器是迭代器的子类型，因此具有next和throw方法。
+yield表达式是暂停执行的标记，而next方法可以恢复执行
+注意：ES7 出现后,推荐使用await。
+function</em> foo() {
+yield 1;
+yield 2;
+yield 3;
+yield 4;
+yield 5;
+return 6;
+}</p> <p>for (let v of foo()) {
+console.log(v);
+}
+// 1 2 3 4 5
+复制代码
+下面是一个利用 Generator 函数和for...of循环，实现斐波那契数列的例子。
+var fibonacci = {
+[Symbol.iterator]: function* () {
+let [prev, curr] = [0, 1];
+for (;😉 {
+yield curr;
+[prev, curr] = [curr, prev + curr];
+}
+},
+};</p> <p>for (var n of fibonacci) {
+//
+if (n &gt; 1000) break;
+console.log(n);
+}
+复制代码
+从上面代码可见，使用for...of语句时不需要使用next方法。
+利用for...of循环，可以写出遍历任意对象（object）的方法。原生的 JavaScript 对象没有迭代器接口，无法使用for...of循环，通过 Generator 函数为它加上这个接口，就可以用了。
+生成器(Generator) 实质上继承了迭代器(Iterator)
+interface Generator extends Iterator {
+next(value?: any): IteratorResult;
+throw(exception: any);
+}
+复制代码
+更多详细内容参考ES 入门教程-iterators
+Unicode
+ES6 增强了 Unicode 的功能,包括</p> <p>支持字符的 Unicode 表示法</p> <p>举例来说，“中”的 Unicode 码点是 U+4e2d，你可以直接在字符串里面输入这个汉字，也可以输入它的转义形式\u4e2d，两者是等价的。
+&quot;中&quot; === &quot;\u4e2d&quot;; // true
+复制代码</p> <p>使用/u匹配码点的正则表达式</p> <p>// new RegExp behaviour, opt-in ‘u’
+&quot;𠮷&quot;.match(/./u)[0].length == 2;
+复制代码</p> <p>获取 32 位的 UTF-16 字符的码点-codePointAt</p> <p>&quot;𠮷&quot;.codePointAt(0) == 0x20bb7;</p> <p>let s = &quot;𠮷a&quot;;
+for (let ch of s) {
+console.log(ch.codePointAt(0).toString(16));
+}
+// 20bb7
+// 61
+复制代码
+更多详细内容参考ES 入门教程-unicode
+模块化(modules)
+ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，完全可以取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决方案。
+使用 export default 或 export 进行导出
+// math.js
+export const pi = 3.141593;</p> <p>export default function sum(x, y) {
+return x + y;
+}
+复制代码
+使用 import 进行导入
+// app.js
+import sum, { pi } from &quot;./math&quot;;</p> <p>alert(&quot;2π = &quot; + sum(pi, pi));
+复制代码
+更多详细内容参考ES 入门教程-module
+模块加载器规则(module loaders)
+模块加载器支持:</p> <p>异步加载
+代码是在模块作用域之中运行，而不是在全局作用域运行。模块内部的顶层变量，外部不可见。
+模块之中，顶层的 this 关键字返回 undefined，而不是指向 window。也就是说，在模块顶层使用 this 关键字，是无意义的</p> <p>//index.js
+const x = 1;</p> <p>console.log(x === window.x); //false
+console.log(this === undefined); // true
+复制代码
+利用顶层的 this 等于 undefined 这个语法点，可以侦测当前代码是否在 ES6 模块之中。
+const isNotModuleScript = this !== undefined;
+复制代码
+更多详细内容参考ES 入门教程-module-loader
+import and export
+Map + Set + Weakmap + Weakset
+ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。
+// Sets
+var s = new Set();
+s.add(&quot;hello&quot;).add(&quot;goodbye&quot;).add(&quot;hello&quot;);
+s.size === 2;
+s.has(&quot;hello&quot;) === true;
+复制代码
+ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。
+// Maps
+var m = new Map();
+m.set(&quot;hello&quot;, 42);
+m.set(s, 34);
+m.get(s) == 34;
+复制代码
+WeakMap 结构与 Map 结构类似，也是用于生成键值对的集合。
+WeakMap 与 Map 的区别有两点。</p> <p>WeakMap 只接受对象作为键名（null 除外），不接受其他类型的值作为键名。
+WeakMap 的键名所指向的对象，不计入垃圾回收机制。</p> <p>// Weak Maps
+var wm = new WeakMap();
+wm.set(s, { extra: 42 });
+wm.size === undefined;
+复制代码
+WeakSet 结构与 Set 类似，也是不重复的值的集合。但是，它与 Set 有两个区别。</p> <p>WeakSet 的成员只能是对象，而不能是其他类型的值。
+WeakSet 中的对象都是弱引用</p> <p>// Weak Sets
+var ws = new WeakSet();
+ws.add({ data: 42 });
+// Because the added object has no other references, it will not be held in the set
+复制代码
+更多详细内容参考ES 入门教程-Set 和 Map
+代理(proxies)
+Proxy 用于修改某些操作的默认行为，等同于在语言层面做出修改。 可以用于操作拦截，日志记录/分析等。
+// 代理一个普通对象
+var target = {};
+var handler = {
+get: function (receiver, name) {
+return <code>Hello, ${name}!</code>;
+},
+};</p> <p>var p = new Proxy(target, handler);</p> <p>// true
+p.world === &quot;Hello, world!&quot;;
+复制代码
+下面是 Proxy 所有可以代理的&quot;元操作&quot;
+var handler =
+{
+get:...,
+set:...,
+has:...,
+deleteProperty:...,
+apply:...,
+construct:...,
+getOwnPropertyDescriptor:...,
+defineProperty:...,
+getPrototypeOf:...,
+setPrototypeOf:...,
+enumerate:...,
+ownKeys:...,
+preventExtensions:...,
+isExtensible:...
+}
+复制代码
+MDN-handler.get()
+// 代理一个函数对象
+var target = function () {
+return &quot;I am the target&quot;;
+};
+var handler = {
+apply: function (receiver, ...args) {
+return &quot;I am the proxy&quot;;
+},
+};</p> <p>var p = new Proxy(target, handler);
+//true
+p() === &quot;I am the proxy&quot;;
+复制代码
+更多详细内容参考ES 入门教程-proxy
+symbols
+ES6 引入了一种新的原始数据类型 Symbol，表示独一无二的值
+Symbol 值通过 Symbol 函数生成。这就是说，对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的 Symbol 类型。凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。
+var MyClass = (function () {
+//
+var key = Symbol(&quot;key&quot;);</p> <p>function MyClass(privateData) {
+this[key] = privateData;
+}</p> <p>MyClass.prototype = {
+doStuff: function () {
+this[key];
+},
+};</p> <p>return MyClass;
+})();</p> <p>var c = new MyClass(&quot;hello&quot;);
+// true
+console.log(c[&quot;key&quot;] === undefined);
+复制代码
+创建 Symbol 的时候，可以添加一个描述。
+const sym = Symbol(&quot;foo&quot;);
+复制代码
+上面代码中，sym 的描述就是字符串 foo。
+Symbol 作为属性名，遍历对象的时候，该属性不会出现在 for...in、for...of 循环中，也不会被 Object.keys()、Object.getOwnPropertyNames()、JSON.stringify()返回。
+但是，它也不是私有属性，有一个 Object.getOwnPropertySymbols()方法，可以获取指定对象的所有 Symbol 属性名。该方法返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。
+const obj = {};
+let a = Symbol(&quot;a&quot;);
+let b = Symbol(&quot;b&quot;);</p> <p>obj[a] = &quot;Hello&quot;;
+obj[b] = &quot;World&quot;;</p> <p>const objectSymbols = Object.getOwnPropertySymbols(obj);</p> <p>objectSymbols;
+// [Symbol(a), Symbol(b)]
+复制代码
+更多详细内容参考ES 入门教程-symbol
+期约(promises)
+Promise 是一个用于异步编程的库,里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。 许多现有的 JavaScript 库已经使用了 Promise。
+function timeout(duration = 0) {
+return new Promise((resolve, reject) =&gt; {
+setTimeout(resolve, duration);
+});
+}</p> <p>var p = timeout(1000)
+.then(() =&gt; {
+return timeout(2000);
+})
+.then(() =&gt; {
+throw new Error(&quot;hmm&quot;);
+})
+.catch((err) =&gt; {
+return Promise.all([timeout(100), timeout(200)]);
+});
+复制代码
+更多详细内容参考ES 入门教程-promise
+math + number + string + array + object APIs
+添加了许多类型的扩展方法,包括:Math ,Array ,String ,Object
+Number.EPSILON;
+Number.isInteger(Infinity); // false
+Number.isNaN(&quot;NaN&quot;); // false</p> <p>Math.acosh(3); // 1.762747174039086
+Math.hypot(3, 4); // 5
+Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2); // 2</p> <p>&quot;abcde&quot;.includes(&quot;cd&quot;); // true
+&quot;abc&quot;.repeat(3); // &quot;abcabcabc&quot;</p> <p>Array.from(document.querySelectorAll(&quot;*&quot;)); // Returns a real Array
+Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg behavior
+[(0, 0, 0)].fill(7, 1) // [0,7,7]
+[(1, 2, 3)].find((x) =&gt; x == 3) // 3
+[(1, 2, 3)].findIndex((x) =&gt; x == 2) // 1
+[(1, 2, 3, 4, 5)].copyWithin(3, 0) // [1, 2, 3, 1, 2]
+[(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)].entries() // iterator [0, &quot;a&quot;], [1,&quot;b&quot;], [2,&quot;c&quot;]
+[(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)].keys() // iterator 0, 1, 2
+[(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)].values(); // iterator &quot;a&quot;, &quot;b&quot;, &quot;c&quot;</p> <p>Object.assign(Point, { origin: new Point(0, 0) });
+复制代码
+更多详细内容参考 ES 入门教程:</p> <p>Number
+Math,
+Array.from
+Array.of
+Array.prototype.copyWithin
+Object.assign</p> <p>二进制和八进制(binary and octal literals)
+两种新的数字表示形式。</p> <p>二进制: 0b 开头
+八进制: 0o 开头</p> <p>0b111110111 === 503; // true
+0o767 === 503; // true
+复制代码
+reflect api
+reflect API 公开对象上的运行时级别的元操作。
+最重要的目的是配合 Proxy 使用，执行原生行为
+让Object操作都变成函数行为。某些Object操作是命令式，比如name in obj和delete obj[name]，而Reflect.has(obj, name)和Reflect.deleteProperty(obj, name)让它们变成了函数行为。
+// 老写法
+&quot;assign&quot; in Object; // true</p> <p>// 新写法
+Reflect.has(Object, &quot;assign&quot;); // true
+复制代码
+更多详细内容参考ES 入门教程-reflect
+尾调用(tail calls)</p> <p>尾调用:某个函数的最后一步是返回并调用另一个函数
+尾递归:函数调用自身，称为递归。如果尾调用自身，就称为尾递归。
+尾调用优化</p> <p>注意，目前只有 Safari 浏览器支持尾调用优化，Chrome 和 Firefox 都不支持。这里就不深入研究了 😁
+function factorial(n, acc = 1) {
+if (n &lt;= 1) return acc;
+return factorial(n - 1, n * acc);
+}</p> <p>// 大多数浏览器中都会出现 堆栈溢出 的错误,
+// 但是在 ES6的Safari中是安全的
+factorial(100000);
+复制代码
+更多详细内容参考ES 入门教程-尾调用
+通过 Intl API 对字符串，数字和日期进行国际化
+Intl 对象是 ECMAScript 国际化 API 的命名空间，它提供对语言敏感的字符串比较、支持数字格式化以及日期和时间的格式化。
+Intl.Collator 对象
+collator 这个单词意思是排序器。Intl.Collator 对象是排序器的构造函数，可以支持对语言敏感的字符串比较。</p> <p>中文排序</p> <p>如果我们希望我们的中文按照首字母拼音排序，该怎么处理？
+此时，可以使用中文简体的 BCF 47 语言标记字符串 zh 进行排序，代码如下：
+var arrUsername = [
+&quot;陈坤&quot;,
+&quot;邓超&quot;,
+&quot;杜淳&quot;,
+&quot;冯绍峰&quot;,
+&quot;韩庚&quot;,
+&quot;胡歌&quot;,
+&quot;黄晓明&quot;,
+&quot;贾乃亮&quot;,
+&quot;李晨&quot;,
+&quot;李易峰&quot;,
+&quot;鹿晗&quot;,
+&quot;井柏然&quot;,
+&quot;刘烨&quot;,
+&quot;陆毅&quot;,
+&quot;孙红雷&quot;,
+];</p> <p>arrUsername.sort(new Intl.Collator(&quot;zh&quot;).compare);
+// 结果是：[&quot;陈坤&quot;, &quot;邓超&quot;, &quot;杜淳&quot;, &quot;冯绍峰&quot;, &quot;韩庚&quot;, &quot;胡歌&quot;, &quot;黄晓明&quot;, &quot;贾乃亮&quot;, &quot;井柏然&quot;, &quot;李晨&quot;, &quot;李易峰&quot;, &quot;刘烨&quot;, &quot;陆毅&quot;, &quot;鹿晗&quot;, &quot;孙红雷&quot;]
+复制代码
+Intl API详细可以参考这篇文章JS Intl 对象完整简介及在中文中的应用</p> <p>ES2011-ES5
+相信大家已经对 ES5 都了然于胸，因此只做简单罗列，就不举例说明了
+'USE STRICT'
+JS 的早期版本允许使用未声明的变量。 但是当使用 es5 &quot;use strict&quot;功能时，会报告错误
+// index.js
+&quot;use strict&quot;;</p> <p>// 报错:a is not defined
+a = 22;
+复制代码
+Array
+Array.isArray
+Array.forEach
+Array.map
+Array.filter
+Array.reduce
+Array.reduceRight
+Array.every
+Array.some
+Array.indexOf
+Array.lastIndexOf
+JSON
+JSON.parse
+JSON.stringify
+DATE
+Date.now()
+Date.now().valueOf()
+Object.defineProperty()</p> <p>参考文档</p> <p>ECMAScript 6 Features
+es6-features.org
+ES2021 Features with simple examples
+4 个强大 JavaScript 运算符
+ES6 核心特性</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/14/2021, 11:23:21 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.b4e09755.js" defer></script><script src="/assets/js/2.c66a9939.js" defer></script><script src="/assets/js/51.b30b4207.js" defer></script>
+<a style="text-align: center;display: block" href="https://beian.miit.gov.cn">蜀ICP备18030457号-1</a>
+</body>
+<script type="text/javascript" async
+        src="//s5.cnzz.com/z_stat.php?id=1275911745&web_id=1275911745&show=none"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164228073-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-164228073-1');
+</script>
+</html>
