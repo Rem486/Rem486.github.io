@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>yum - 命令参数详解 | 从零开始的故事</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="前端博客,前端知识,前端备忘录,程序员笔记,css,html,javascript,git,linux">
+  <meta name="baidu-site-verification" content="utzmmiwMvm"/>
+  <link rel="icon" href="/img/logo.ico">
+  <meta name="description" content="什么是yum,yum命令参数详解">
+    <meta property="article:published_time" content="2021-08-03T00:00:00.000Z">
+    <meta property="article:modified_time" content="2021-08-03T02:02:17.000Z">
+    <meta property="og:site_name" content="从零开始的故事">
+    <meta property="og:title" content="yum - 命令参数详解">
+    <meta property="og:description" content="什么是yum,yum命令参数详解">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/server/env/yum-command.html">
+    <meta name="twitter:title" content="yum - 命令参数详解">
+    <meta name="twitter:description" content="什么是yum,yum命令参数详解">
+    <meta name="twitter:url" content="/server/env/yum-command.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="yum命令详解, 包管理工具">
+    <meta property="article:tag" content="yum命令详解">
+  <link rel="preload" href="/assets/css/0.styles.2e4c45c6.css" as="style"><link rel="preload" href="/assets/js/app.9ab4181f.js" as="script"><link rel="preload" href="/assets/js/2.c66a9939.js" as="script"><link rel="preload" href="/assets/js/41.b7a43f21.js" as="script"><link rel="prefetch" href="/assets/js/10.c97cb8e9.js"><link rel="prefetch" href="/assets/js/11.cc050bde.js"><link rel="prefetch" href="/assets/js/12.3150af82.js"><link rel="prefetch" href="/assets/js/13.9d0f6c8c.js"><link rel="prefetch" href="/assets/js/14.9bd6a780.js"><link rel="prefetch" href="/assets/js/15.d513a4af.js"><link rel="prefetch" href="/assets/js/16.311cd1e7.js"><link rel="prefetch" href="/assets/js/17.373630f6.js"><link rel="prefetch" href="/assets/js/18.7d5aa86d.js"><link rel="prefetch" href="/assets/js/19.036a33f4.js"><link rel="prefetch" href="/assets/js/20.4809e09b.js"><link rel="prefetch" href="/assets/js/21.beaf6393.js"><link rel="prefetch" href="/assets/js/22.22884a80.js"><link rel="prefetch" href="/assets/js/23.94cce447.js"><link rel="prefetch" href="/assets/js/24.cb2d82d9.js"><link rel="prefetch" href="/assets/js/25.dd0b181a.js"><link rel="prefetch" href="/assets/js/26.8849d79b.js"><link rel="prefetch" href="/assets/js/27.59776175.js"><link rel="prefetch" href="/assets/js/28.37ddba98.js"><link rel="prefetch" href="/assets/js/29.2a03fa20.js"><link rel="prefetch" href="/assets/js/3.f565634a.js"><link rel="prefetch" href="/assets/js/30.170aaf28.js"><link rel="prefetch" href="/assets/js/31.dfdc55cd.js"><link rel="prefetch" href="/assets/js/32.b4852aac.js"><link rel="prefetch" href="/assets/js/33.82b4cad6.js"><link rel="prefetch" href="/assets/js/34.63ffa4be.js"><link rel="prefetch" href="/assets/js/35.add93787.js"><link rel="prefetch" href="/assets/js/36.1a141cc7.js"><link rel="prefetch" href="/assets/js/37.21632dfe.js"><link rel="prefetch" href="/assets/js/38.1a069ecf.js"><link rel="prefetch" href="/assets/js/39.4d0b3736.js"><link rel="prefetch" href="/assets/js/4.d2a58c11.js"><link rel="prefetch" href="/assets/js/40.d89b93f6.js"><link rel="prefetch" href="/assets/js/42.e7170d7a.js"><link rel="prefetch" href="/assets/js/43.8088c1ad.js"><link rel="prefetch" href="/assets/js/44.7789e516.js"><link rel="prefetch" href="/assets/js/45.fa1f11b4.js"><link rel="prefetch" href="/assets/js/46.2660880c.js"><link rel="prefetch" href="/assets/js/47.690f7448.js"><link rel="prefetch" href="/assets/js/48.471daef4.js"><link rel="prefetch" href="/assets/js/49.97976cae.js"><link rel="prefetch" href="/assets/js/5.bbfe7e5f.js"><link rel="prefetch" href="/assets/js/50.e7d12d45.js"><link rel="prefetch" href="/assets/js/51.91f5dc73.js"><link rel="prefetch" href="/assets/js/52.5b01a2d9.js"><link rel="prefetch" href="/assets/js/53.387fabd3.js"><link rel="prefetch" href="/assets/js/54.c3d79a32.js"><link rel="prefetch" href="/assets/js/55.a2072cf9.js"><link rel="prefetch" href="/assets/js/56.167598cd.js"><link rel="prefetch" href="/assets/js/57.399af9f9.js"><link rel="prefetch" href="/assets/js/58.eb9ed0ea.js"><link rel="prefetch" href="/assets/js/59.97b2920c.js"><link rel="prefetch" href="/assets/js/6.a6ef3a2b.js"><link rel="prefetch" href="/assets/js/60.863a5e25.js"><link rel="prefetch" href="/assets/js/61.e48fb305.js"><link rel="prefetch" href="/assets/js/62.497d0dbc.js"><link rel="prefetch" href="/assets/js/63.eb8fdfa1.js"><link rel="prefetch" href="/assets/js/64.cf653518.js"><link rel="prefetch" href="/assets/js/65.6bf22acf.js"><link rel="prefetch" href="/assets/js/66.ead4391d.js"><link rel="prefetch" href="/assets/js/67.af5f3ba2.js"><link rel="prefetch" href="/assets/js/68.d3493b4a.js"><link rel="prefetch" href="/assets/js/69.076a5b02.js"><link rel="prefetch" href="/assets/js/7.a695bfb8.js"><link rel="prefetch" href="/assets/js/70.bb64253f.js"><link rel="prefetch" href="/assets/js/71.1a4a8c7f.js"><link rel="prefetch" href="/assets/js/72.b4827ebe.js"><link rel="prefetch" href="/assets/js/73.74c64dfb.js"><link rel="prefetch" href="/assets/js/74.345d5ee5.js"><link rel="prefetch" href="/assets/js/75.00188234.js"><link rel="prefetch" href="/assets/js/76.bce8d639.js"><link rel="prefetch" href="/assets/js/77.842c402a.js"><link rel="prefetch" href="/assets/js/78.efc9561c.js"><link rel="prefetch" href="/assets/js/79.0244cf21.js"><link rel="prefetch" href="/assets/js/8.84177c6c.js"><link rel="prefetch" href="/assets/js/80.5986bbf1.js"><link rel="prefetch" href="/assets/js/81.ee6bac15.js"><link rel="prefetch" href="/assets/js/82.131834e9.js"><link rel="prefetch" href="/assets/js/83.0d623c96.js"><link rel="prefetch" href="/assets/js/84.70b9ce50.js"><link rel="prefetch" href="/assets/js/85.33a7991d.js"><link rel="prefetch" href="/assets/js/86.ce151a7a.js"><link rel="prefetch" href="/assets/js/87.213db50c.js"><link rel="prefetch" href="/assets/js/88.8e9408ca.js"><link rel="prefetch" href="/assets/js/89.3e2c38e1.js"><link rel="prefetch" href="/assets/js/9.a8fd0d96.js"><link rel="prefetch" href="/assets/js/90.9b31eed6.js"><link rel="prefetch" href="/assets/js/91.14b1f548.js"><link rel="prefetch" href="/assets/js/92.aebdbb81.js"><link rel="prefetch" href="/assets/js/93.5a9e0c6d.js"><link rel="prefetch" href="/assets/js/94.30905ea0.js"><link rel="prefetch" href="/assets/js/95.1a4b47ea.js"><link rel="prefetch" href="/assets/js/96.73fd4044.js"><link rel="prefetch" href="/assets/js/97.fd4575c1.js">
+  <link rel="stylesheet" href="/assets/css/0.styles.2e4c45c6.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">从零开始的故事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link router-link-active">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link">
+  问题记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="FE Menu" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="FE Menu" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">
+  前端笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/server/" class="nav-link router-link-active">
+  服务器
+</a></div><div class="nav-item"><a href="/daily/" class="nav-link">
+  问题记录
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  做题家
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="https://github.com/Rem486/Rem486.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/server/" aria-current="page" class="sidebar-link">我的服务器</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>环境</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/server/env/docker-install.html" class="sidebar-link">docker - 安装</a></li><li><a href="/server/env/docker-error.html" class="sidebar-link">docker - 常见报错</a></li><li><a href="/server/env/linux-command.html" class="sidebar-link">linux - 常用命令</a></li><li><a href="/server/env/linux-dns.html" class="sidebar-link">linux - 修改DNS</a></li><li><a href="/server/env/linux-systemctl.html" class="sidebar-link">linux - systemctl详细理解及常用命令</a></li><li><a href="/server/env/node-version-control.html" class="sidebar-link">管理nodejs版本</a></li><li><a href="/server/env/ssh-password-free-login.html" class="sidebar-link">ssh - 免密登录及设置多个key</a></li><li><a href="/server/env/yum-command.html" aria-current="page" class="active sidebar-link">yum - 命令参数详解</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/server/env/yum-command.html#yum-常用命令" class="sidebar-link">yum 常用命令</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/server/database/mongodb-error.html" class="sidebar-link">mongodb - 常见错误</a></li><li><a href="/server/database/mongodb-memo.html" class="sidebar-link">mongodb - 备忘录</a></li><li><a href="/server/database/mysql-start-stop.html" class="sidebar-link">mysql - 启动和关闭</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="yum-命令参数详解"><a href="#yum-命令参数详解" class="header-anchor">#</a> yum - 命令参数详解</h1> <blockquote><p>Yum（全称为 Yellow dog Updater, Modified）是一个在 Fedora 和 RedHat 以及 CentOS 中的 Shell 前端软件包管理器。基于 RPM 包管理，能够从指定的服务器自动下载 RPM 包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。</p></blockquote> <h2 id="yum-常用命令"><a href="#yum-常用命令" class="header-anchor">#</a> yum 常用命令</h2> <p>YUM 命令格式为：</p> <p><code>YUM [command] [package] -y|-q</code></p> <p>其中的 <code>[options]</code> 是可选。<code>-y</code> 安装或者卸载出现 YES 时，自动确认 yes；<code>-q</code> 不显示安装的过程。</p> <ul><li><code>yum install httpd</code> 安装 httpd 软件包；</li> <li><code>yum search YUM</code> 搜索软件包；</li> <li><code>yum list httpd</code> 显示指定程序包安装情况 httpd；</li> <li><code>yum list</code> 显示所有已安装及可安装的软件包；</li> <li><code>yum remove httpd</code> 删除程序包 httpd；</li> <li><code>yum erase httpd</code> 删除程序包 httpd；</li> <li><code>yum update tree</code> 内核升级或者软件更新；</li> <li><code>yum update httpd</code> 更新 httpd 软件；</li> <li><code>yum check-update</code> 检查可更新的程序；</li> <li><code>yum info httpd</code> 显示安装包信息 httpd；</li> <li><code>yum provides */rz</code> 列出 rz 命令由哪个软件包提供；</li> <li><code>yum grouplist</code> 查询可以用 groupinstall 安装的组名称；</li> <li><code>yum groupinstall “Chinese Support”</code> 安装中文支持；</li> <li><code>yum groupremove “Chinese Support”</code> 删除程序组 Chinese Support；</li> <li><code>yum deplist httpd</code> 查看程序 httpd 依赖情况；</li> <li><code>yum clean packages</code> 清除缓存目录下的软件包；</li> <li><code>yum clean headers</code> 清除缓存目录下的 headers；</li> <li><code>yum clean all</code> 清除缓存目录下的软件包及旧的 headers。</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">8/3/2021, 10:02:17 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/server/env/ssh-password-free-login.html" class="prev">
+        ssh - 免密登录及设置多个key
+      </a></span> <span class="next"><a href="/server/database/mongodb-error.html">
+        mongodb - 常见错误
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.9ab4181f.js" defer></script><script src="/assets/js/2.c66a9939.js" defer></script><script src="/assets/js/41.b7a43f21.js" defer></script>
+<a style="text-align: center;display: block" href="https://beian.miit.gov.cn">蜀ICP备18030457号-1</a>
+</body>
+<script type="text/javascript" async
+        src="//s5.cnzz.com/z_stat.php?id=1275911745&web_id=1275911745&show=none"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164228073-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-164228073-1');
+</script>
+</html>
